@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Farrer Park Hospital Discharge eForms</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="asset/css/style.css">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
+</head>
+
+<body>
+    <div class="container-fluid">
+        <header>
+            <div id="top_navbar">
+                <div class='logo'>
+                    <a href="dashboard.html"><img src='asset/img/logo.jpg' width='100px' height='50px'></a>
+                </div>
+                <div class='logged_user'>
+
+                    <span>
+                      Welcome , Dr. Chiew Kim Huat Richard.   <br>
+                      Your last login was on 3 Mar 2020 12:00pm
+                    </span>
+
+                    <button type='button' class='btn logout'>Logout</button>
+
+                </div>
+            </div>
+        </header>
+        <div class="clear_fix"></div>
+        <div class="row">
+            <div class="col-md-12 main-content">
+                <ul class="nav nav-tabs" id="myTab" role="tablist">
+                    <li class="nav-item">
+                        <a class="nav-link active" id="Recent-tab" data-toggle="tab" href="#Recent" role="tab" aria-controls="Recent" aria-selected="true">Recent</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="Archives-tab" data-toggle="tab" href="#Archives" role="tab" aria-controls="Archives" aria-selected="false">Archives</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="Reports-tab" data-toggle="tab" href="#Reports" role="tab" aria-controls="Reports" aria-selected="false">Reports</a>
+                    </li>
+                </ul>
+                <div class="tab-content" id="myTabContent">
+                    <div class="tab-pane show active" id="Recent" role="tabpanel" aria-labelledby="Recent-tab">
+                        <h3 class='page_title'>Letter of Certification</h3>
+
+                        <div class="container-fluid" style='padding-left:0;'>
+                            <div class="row">
+                                <div class="col-2">
+                                    <div class="nav flex-column nav-pills" id="side-tab" role="tablist" aria-orientation="vertical">
+                                        <a class="nav-link show active" id="side-tab-patient-particulars-tab" data-toggle="pill" href="#side-tab-patient-particulars" role="tab" aria-controls="side-tab-patient-particulars" aria-selected="true">Patient Particulars</a>
+                                        <a class="nav-link" id="side-tab-diagnosis-tab" data-toggle="pill" href="#side-tab-diagnosis" role="tab" aria-controls="side-tab-diagnosis" aria-selected="false">Diagnosis</a>
+                                        <a class="nav-link" id="side-tab-procedures-tab" data-toggle="pill" href="#side-tab-procedures" role="tab" aria-controls="side-tab-procedures" aria-selected="false">Procedures</a>
+                                        <a class="nav-link" id="side-tab-non-surgical-treatment-tab" data-toggle="pill" href="#side-tab-non-surgical-treatment" role="tab" aria-controls="side-tab-non-surgical-treatment" aria-selected="false">Non-Surgical Treatment</a>
+                                        <a class="nav-link" id="side-tab-certification-tab" data-toggle="pill" href="#side-tab-certification" role="tab" aria-controls="side-tab-certification" aria-selected="false">Certification</a>
+                                        <a class="nav-link" id="side-tab-audit-tab" data-toggle="pill" href="#side-tab-audit" role="tab" aria-controls="side-tab-audit" aria-selected="false">Audit Information</a>
+                                    </div>
+                                </div>
+                                <div class="col-10 lc_content">
+                                    <div class="tab-content" id="side-tab-tabContent">
+                                        <div class="tab-pane fade" id="side-tab-patient-particulars" role="tabpanel" aria-labelledby="side-tab-patient-particulars-tab">
+                                            <div class='sub_page_title'>
+                                                <h4>
+
+                                                    A. Patient Particulars
+                                                </h4>
+                                                <div class="clear_fix"></div>
+                                                <div class="container-fluid" style='padding:0;'>
+                                                    <div class="row">
+                                                        <div class="col-md-6">
+                                                            <div class="container-fluid" style='padding:0;'>
+                                                                <div class="row">
+                                                                    <div class="col-md-4">
+                                                                        <label>Name :</label>
+                                                                    </div>
+                                                                    <div class="col-md-8">
+                                                                        <label>Chan Ah Tow</label>
+                                                                    </div>
+                                                                    <div class="col-md-4">
+                                                                        <label>NRIC / Passport No. :</label>
+                                                                    </div>
+                                                                    <div class="col-md-8">
+                                                                        <label>123456789</label>
+                                                                    </div>
+                                                                    <div class="col-md-4">
+                                                                        <label>Patient Acccount No. :</label>
+                                                                    </div>
+                                                                    <div class="col-md-8">
+                                                                        <label>123456789</label>
+                                                                    </div>
+
+                                                                </div>
+                                                            </div>
+
+                                                        </div>
+                                                        <div class="col-md-6">
+                                                            <div class="container-fluid" style='padding:0;'>
+                                                                <div class="row">
+                                                                    <div class="col-md-4">
+                                                                        <label>Date of Admission :</label>
+                                                                    </div>
+                                                                    <div class="col-md-8">
+                                                                        <label>22/10/2020</label>
+                                                                    </div>
+                                                                    <div class="col-md-4">
+                                                                        <label>Date of Discharge :</label>
+                                                                    </div>
+                                                                    <div class="col-md-8">
+                                                                        <label>02/11/2020</label>
+                                                                    </div>
+                                                                    <div class="col-md-4">
+                                                                        <label>Case Type :</label>
+                                                                    </div>
+                                                                    <div class="col-md-8">
+                                                                        <label>Day Surgery</label>
+                                                                    </div>
+
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-6">
+                                                            <div class="container-fluid" style='padding:0;'>
+                                                                <div class="row">
+                                                                    <div class="col-md-4">
+                                                                        <label>Admitting Specialty :</label>
+                                                                    </div>
+                                                                    <div class="col-md-8">
+                                                                        <label>08 General Surgery</label>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                            <div class="clear_fix"></div>
+                                        </div>
+                                        <div class="tab-pane fade" id="side-tab-diagnosis" role="tabpanel" aria-labelledby="side-tab-diagnosis">
+                                            <div class='sub_page_title'>
+                                                <h4>
+                                                    B. Diagnosis
+                                                </h4>
+
+                                            </div>
+                                            <div class="clear_fix"></div>
+                                            <div class="container-fluid" style='padding:0;'>
+                                                <div class="row">
+                                                    <div class="col-md-12">
+                                                        <div class="container-fluid" style='padding:0;'>
+                                                            <div class="row">
+                                                                <div class="col-md-4">
+                                                                    <label>Principal Diagnosis :</label>
+                                                                </div>
+                                                                <div class="col-md-8">
+                                                                    <input class="form-control" type='text' name='name'>
+                                                                </div>
+                                                                <div class='m_15'></div>
+                                                                <div class="col-md-4">
+                                                                    <label>Secondary Diagnosis :</label>
+                                                                </div>
+                                                                <div class="col-md-8">
+                                                                    <div id='secondary_diagnosis_field'>
+                                                                        <div class="input-group" id="TextBoxDiv1">
+                                                                            <div class="input-group-prepend">
+                                                                                <span class="input-group-text">1.</span>
+                                                                            </div>
+                                                                            <input class="form-control" type='text' name='secondary_diagnosis[]'>
+                                                                        </div>
+                                                                    </div>
+
+                                                                </div>
+                                                                <div class='m_15'></div>
+                                                                <div class="col-md-4">
+                                                                    <label></label>
+                                                                </div>
+                                                                <div class="col-md-8">
+                                                                    <button type="button" class='btn' id='addButton'><i class="fas fa-plus"></i> Add Field</button>
+                                                                    <button type="button" class='btn' id='removeButton'><i class="fas fa-minus"></i> Remove Field</button>
+                                                                </div>
+                                                                <div class='m_15'></div>
+                                                                <div class="col-md-4">
+                                                                    <label>Other Diagnosis :</label>
+                                                                </div>
+                                                                <div class="col-md-8">
+                                                                    <textarea name="other_diagnosis" id="" rows="10" style='width:100%;'></textarea>
+                                                                </div>
+                                                                <div class='m_15'></div>
+                                                                <div class='btn_save'>
+                                                                    <button type="button" class='btn'>Save</button>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+
+                                                    </div>
+
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                        <div class="tab-pane fade show active" id="side-tab-procedures" role="tabpanel" aria-labelledby="side-tab-procedures-tab">
+                                            <div class='sub_page_title'>
+                                                <h4>
+                                                    C. Procedures
+                                                </h4>
+                                                <div class="clear_fix"></div>
+                                                <div class="container-fluid" style='padding:0;'>
+                                                    <div class="row">
+                                                        <div class="col-md-12">
+                                                            <div class="container-fluid" style='padding:0;'>
+                                                                <div class="row">
+                                                                    <div class="col-md-3">
+                                                                        <label>Date of Procedure : 17/07/19</label>
+                                                                    </div>
+                                                                    <div class="col-md-3">
+                                                                        <label>Start time in OT : 09:20 </label>
+                                                                    </div>
+                                                                    <div class="col-md-3">
+                                                                        <label>End time in OT : 15:00</label>
+                                                                    </div>
+                                                                    <div class="col-md-3">
+                                                                        <label>Table : 2A</label>
+                                                                    </div>
+                                                                    <div class='m_15'></div>
+                                                                    <div class="col-md-6">
+                                                                        <label>Surgical Procedure :</label>
+                                                                        <select class="form-control" id="surgical_procedure" name='surgical_procedure'>
+                                                                          <option>select ...</option>
+                                                                          <option>SA701S : Skin and Subcutaneous Tissue, Tumor/Cyst/Ulcer/Scar, Excision biopsy, removal of 2 or more or recurrent or complicated (adherent), excision</option>
+                                                                          <option>SA704B : Breasts, Lumps, imaging Guided Vaccum assisted Biopsy / Mammodome, Single lesion</option>
+                                                                          <option>SA824B : Breast, Tumor (malignant), Simple Mastectomy with Axiliary Clearance, with/without Sentinel Node Biopsy</option>
+                                                                        </select>
+
+                                                                    </div>
+                                                                    <div class="col-md-6">
+                                                                        <label>Nature of Operation :</label>
+                                                                        <select class="form-control" id="nature_of_operation" name='nature_of_operation'>
+                                                                            <option>select ...</option>
+                                                                            <option>Medical</option>
+                                                                            <option>Cosmetic</option>
+                                                                            <option>Repeated</option>
+                                                                            <option>Staged</option>
+                                                                          </select>
+                                                                    </div>
+
+                                                                </div>
+                                                            </div>
+
+                                                        </div>
+
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                            <div class="clear_fix"></div>
+                                        </div>
+                                        <div class="tab-pane fade" id="side-tab-non-surgical-treatment" role="tabpanel" aria-labelledby="side-tab-non-surgical-treatment-tab">non-surgical-treatment</div>
+                                        <div class="tab-pane fade" id="side-tab-certification" role="tabpanel" aria-labelledby="side-tab-certification-tab">certification</div>
+                                        <div class="tab-pane fade" id="side-tab-audit" role="tabpanel" aria-labelledby="side-tab-audit-tab">audit</div>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+                    <div class="tab-pane fade" id="Archives" role="tabpanel" aria-labelledby="Archives-tab">Archives tab</div>
+                    <div class="tab-pane fade" id="Reports" role="tabpanel" aria-labelledby="Reports-tab">Reports tab</div>
+
+                </div>
+            </div>
+
+            <!-- surgical_procedure_modal -->
+            <div class="modal fade" id="surgical_procedure_modal" tabindex="-1" role="dialog" aria-labelledby="surgical_procedure_modal" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="ModalCenterTitle">Surgical Procedure</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                              <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <table class="table table-bordered table-hover dashboard_table">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">Doctor Type</th>
+                                        <th scope="col">Doctor Name</th>
+                                        <th scope="col">MCR No.</th>
+                                        <th scope="col">Professional Fees</th>
+                                        <th scope="col">Implant Fees</th>
+                                        <th scope="col">Other Fees</th>
+                                        <th scope="col">Total Surgical Fees</th>
+                                        <th scope="col">GST</th>
+                                        <th scope="col">Charges with GST</th>
+                                        <th scope="col">Fees to be collected *(NC/FC)</th>
+                                        <th scope="col">Status</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <th scope="row">Principal Surgeon</th>
+                                        <td>Dr Richard Chew Kim Huat</td>
+                                        <td>01877E</td>
+                                        <td>
+                                            $<input class="form-control fee_unit" type="number" name="professional_fees" required>
+                                        </td>
+                                        <td> $<input class="form-control fee_unit" type="number" name="implant_fees" required></td>
+                                        <td> <span id='other_fee'>$0.00 </span> <button type="button" class='btn sub_form' data-toggle="modal" data-target="#sub_form_modal">sub-form</button></td>
+                                        <td> <span id='total_fee'>$300.00 </span></td>
+                                        <td>
+                                            <select class="form-control" id="gst" name='gst'>
+                                              <option>select ...</option>
+                                              <option>Charged</option>
+                                              <option>Waived</option>
+                                              <option>Not Registered</option>
+                                            </select>
+                                        </td>
+                                        <td> <span id='charged_gst_fee'>$300.00 </span></td>
+                                        <td width='150px'> $<input class="form-control fee_unit" type="text" name="fee_collected" required> </td>
+                                        <td> <select class="form-control" id="status" name='status'>
+                                            <option>Completed</option>
+                                            <option>Saved as Draft</option>
+                                          </select>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">Anaesthetist</th>
+                                        <td>Dr Chong Kwan Yin</td>
+                                        <td>03792C</td>
+                                        <td>
+                                            $<input class="form-control fee_unit" type="number" name="professional_fees" required>
+                                        </td>
+                                        <td> $<input class="form-control fee_unit" type="number" name="implant_fees" required></td>
+                                        <td> <span id='other_fee'>$0.00 </span> <button type="button" class='btn sub_form' data-toggle="modal" data-target="#sub_form_modal">sub-form</button></td>
+                                        <td> <span id='total_fee'>$300.00 </span></td>
+                                        <td>
+                                            <select class="form-control" id="gst" name='gst'>
+                                              <option>select ...</option>
+                                              <option>Charged</option>
+                                              <option>Waived</option>
+                                              <option>Not Registered</option>
+                                            </select>
+                                        </td>
+                                        <td> <span id='charged_gst_fee'>$300.00 </span></td>
+                                        <td width='150px'> $<input class="form-control fee_unit" type="text" name="fee_collected" required> </td>
+                                        <td> <select class="form-control" id="status" name='status'>
+                                            <option>Completed</option>
+                                            <option>Saved as Draft</option>
+                                          </select>
+                                        </td>
+                                    </tr>
+
+
+
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-primary">Save changes</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- sub_form_modal -->
+            <div class="modal fade" id="sub_form_modal" tabindex="-1" role="dialog" aria-labelledby="sub_form_modal" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title center" id="sub_form_modal_title">Breakdown of Other Fees </h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                              <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="container-fluid" style='padding:0;'>
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <label>Doctor Type :</label>
+                                    </div>
+                                    <div class="col-md-8">
+                                        <label>Chan Ah Tow</label>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <label>Doctor Name :</label>
+                                    </div>
+                                    <div class="col-md-8">
+                                        <label>123456789</label>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <label>Doctor MCR No. :</label>
+                                    </div>
+                                    <div class="col-md-8">
+                                        <label>123456789</label>
+                                    </div>
+
+                                    <div class="col-md-4">
+                                        <label>Date of Procedure :</label>
+                                    </div>
+                                    <div class="col-md-8">
+                                        <label>Chan Ah Tow</label>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <label>Start time in OT :</label>
+                                    </div>
+                                    <div class="col-md-8">
+                                        <label>123456789</label>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <label>End time in OT :</label>
+                                    </div>
+                                    <div class="col-md-8">
+                                        <label>123456789</label>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <label> Surgical Procedure :</label>
+                                    </div>
+                                    <div class="col-md-8">
+                                        <label>SA704B : Breasts, Lumps, imaging Guided Vaccum assisted Biopsy / Mammodome, Single lesion</label>
+                                    </div>
+
+
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-primary">Save changes</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Optional JavaScript -->
+            <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+            <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+            <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+            <script>
+                $(document).ready(function() {
+
+                    var counter = 2;
+                    $("#addButton").click(function() {
+
+                        // if (counter > 10) {
+                        //     alert("Only 10 textboxes allow");
+                        //     return false;
+                        // }
+                        var newTextBoxDiv = $(document.createElement('div'));
+
+                        var newField = `<div class="input-group" id="TextBoxDiv${counter}">
+                                              <div class="m_15"></div>
+                                              <div class="input-group-prepend">
+                                                <span class="input-group-text">${counter}.</span>
+                                              </div>
+                                              <input class="form-control" type='text' name='secondary_diagnosis[]'>
+                                          </div>
+                                        `;
+                        newTextBoxDiv.after().html(newField);
+                        newTextBoxDiv.appendTo("#secondary_diagnosis_field");
+                        counter++;
+                    });
+
+                    $("#removeButton").click(function() {
+                        if (counter == 2) {
+                            alert("At least 1 field of textbox for secondary diagnosis");
+                            return false;
+                        }
+                        counter--;
+
+                        $("#TextBoxDiv" + counter).remove();
+
+                    });
+
+                });
+                $("select#surgical_procedure").change(function() {
+                    var selectedSP = $(this).children("option:selected").val();
+                    $('#surgical_procedure_modal').modal('show');
+                    // alert("You have selected the surgical procedure - " + selectedSP);
+                });
+            </script>
+</body>
+
+</html>

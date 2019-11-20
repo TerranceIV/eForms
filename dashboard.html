@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Farrer Park Hospital Discharge eForms</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="asset/css/style.css">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
+
+
+</head>
+
+<body>
+
+    <div class="container-fluid">
+        <header>
+            <div id="top_navbar">
+                <div class='logo'>
+                    <a href="dashboard.html"><img src='asset/img/logo.jpg' width='100px' height='50px'></a>
+                </div>
+                <div class='logged_user'>
+
+                    <span>
+                      Welcome , Dr. Chiew Kim Huat Richard.   <br>
+                      Your last login was on 3 Mar 2020 12:00pm
+                    </span>
+
+                    <button type='button' class='btn logout'>Logout</button>
+
+                </div>
+            </div>
+        </header>
+        <div class="clear_fix"></div>
+        <div class="row">
+            <div class="col-md-12 main-content">
+                <ul class="nav nav-tabs" id="myTab" role="tablist">
+                    <li class="nav-item">
+                        <a class="nav-link" id="Recent-tab" data-toggle="tab" href="#Recent" role="tab" aria-controls="Recent" aria-selected="true">Recent</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" id="Archives-tab" data-toggle="tab" href="#Archives" role="tab" aria-controls="Archives" aria-selected="false">Archives</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="Reports-tab" data-toggle="tab" href="#Reports" role="tab" aria-controls="Reports" aria-selected="false">Reports</a>
+                    </li>
+                </ul>
+                <div class="tab-content" id="myTabContent">
+                    <div class="tab-pane fade" id="Recent" role="tabpanel" aria-labelledby="Recent-tab">Recent tab</div>
+                    <div class="tab-pane fade show active" id="Archives" role="tabpanel" aria-labelledby="Archives-tab">
+                        <form action='#' method='post' class='form_filter'>
+                            <div class="container-fluid">
+                                <div class="row">
+                                    <div class="col-md-3">
+                                        <label for="Name"> Patient Name</label>
+                                        <input class="form-control" type='text' name='name'>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <div class="form-group">
+                                            <label for="Discharge_Status">Discharge Status</label>
+                                            <select class="form-control" id="Discharge_Status" name='discharge_status'>
+                                              <option>select ...</option>
+                                              <option>Death</option>
+                                              <option>Death with Coronel Case</option>
+                                              <option>Others</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <label for="Name"> Date of Discharge</label>
+                                        <input class="form-control" type='date' name='date_of_discharge'>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <button type="button" name='search' class="btn btn-search">Search</button>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </form>
+                        <div class='data_filter'>
+                            <p class='num_records'>100 records found</p>
+                            <div class="form-group rows_per_page">
+                                <select class="form-control" id="rows_per_page" name='rows_per_page'>
+                              <option>Rows per page</option>
+                              <option>25</option>
+                              <option>50</option>
+                              <option>100</option>
+                              <option>200</option>
+                              <option>500</option>
+                            </select>
+                            </div>
+                        </div>
+                        <table class="table table-bordered table-hover dashboard_table">
+                            <thead>
+                                <tr>
+                                    <th scope="col">No.</th>
+                                    <th scope="col">Patient Name</th>
+                                    <th scope="col">Status</th>
+                                    <th scope="col">TSP(S$)</th>
+                                    <th scope="col">Admitted On</th>
+                                    <th scope="col">Discharged On</th>
+                                    <th scope="col">Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <th scope="row">1</th>
+                                    <td>Chan Ah Tow</td>
+                                    <td>Admitted</td>
+                                    <td>0.00</td>
+                                    <td>19/10/2020</td>
+                                    <td>30/10/2020</td>
+                                    <td>
+                                        <div class="btn-group actions" role="group" aria-label="Basic example">
+                                            <a href='lc.html'><button type="button" class="btn btn-primary">LC</button></a>
+                                            <button type="button" class="btn btn-secondary">DS</button>
+                                            <button type="button" class="btn btn-info">MC</button>
+                                        </div>
+                                    </td>
+
+                                </tr>
+                                <tr>
+                                    <th scope="row">2</th>
+                                    <td>Sutanto Budi Hartono</td>
+                                    <td>Admitted</td>
+                                    <td>100.00</td>
+                                    <td>9/10/2020</td>
+                                    <td>20/10/2020</td>
+                                    <td>
+                                        <div class="btn-group actions" role="group" aria-label="Basic example">
+                                            <a href='lc.html'><button type="button" class="btn btn-primary">LC</button></a>
+                                            <button type="button" class="btn btn-secondary">DS</button>
+                                            <button type="button" class="btn btn-info">MC</button>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">3</th>
+                                    <td>Micheal Philip</td>
+                                    <td>Discharged</td>
+                                    <td>1232130.00</td>
+                                    <td>10/10/2020</td>
+                                    <td>20/10/2020</td>
+                                    <td>
+                                        <div class="btn-group actions" role="group" aria-label="Basic example">
+                                            <a href='lc.html'><button type="button" class="btn btn-primary">LC</button></a>
+                                            <button type="button" class="btn btn-secondary">DS</button>
+                                            <button type="button" class="btn btn-info">MC</button>
+                                        </div>
+                                    </td>
+                                </tr>
+
+                            </tbody>
+                        </table>
+                        <nav aria-label="Page navigation example">
+                            <ul class="pagination justify-content-center">
+                                <li class="page-item disabled">
+                                    <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Previous</a>
+                                </li>
+                                <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                                <li class="page-item"><a class="page-link" href="#">2</a></li>
+                                <li class="page-item"><a class="page-link" href="#">3</a></li>
+                                <li class="page-item"><a class="page-link" href="#">4</a></li>
+                                <li class="page-item"><a class="page-link" href="#">5</a></li>
+                                <li class="page-item">
+                                    <a class="page-link" href="#">Next</a>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+                    <div class="tab-pane fade" id="Reports" role="tabpanel" aria-labelledby="contact-tab">Reports tab</div>
+                </div>
+
+
+            </div>
+
+
+        </div>
+    </div>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+</body>
+
+</html>
