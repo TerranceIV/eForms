@@ -1,0 +1,156 @@
+#top_navbar {
+  padding-top: 1rem;
+}
+
+#top_navbar .logo {
+  float: left;
+  width: 20%;
+}
+
+#top_navbar .logged_user {
+  position: relative;
+}
+
+#top_navbar .logged_user span {
+  position: absolute;
+  right: 80px;
+}
+
+#top_navbar .logged_user button {
+  position: absolute;
+  right: 0;
+}
+
+#top_navbar .logged_user .logout {
+  cursor: pointer;
+  padding: 5px 10px;
+}
+
+.table.dashboard_table td,
+.table.dashboard_table th {
+  padding: 0.25rem;
+  text-align: center;
+}
+
+.table.dashboard_table thead {
+  background-color: grey;
+  color: white;
+}
+
+.clear_fix {
+  clear: both;
+}
+
+.main-content {
+  margin-top: 1rem;
+}
+
+.form_filter {
+  margin: 15px 0px;
+  padding: 15px 0px;
+  border-bottom: 1px dotted black;
+}
+
+input {
+  width: 100%;
+}
+
+.btn-search {
+  width: 100%;
+  margin-top: 32px;
+  background-color: #ab0000;
+  color: white;
+}
+
+.data_filter .num_records {
+  float: left;
+  width: 30%;
+  font-size: 12px;
+}
+
+.data_filter .rows_per_page {
+  float: right;
+  width: 30%;
+}
+
+.actions {
+  width: 100%;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.actions .btn {
+  margin-right: -3px;
+}
+
+#myTabContent {
+  background-color: #f5f5f5;
+}
+
+.m_15 {
+  height: 15px;
+  width: 100%;
+}
+
+.page_title {
+  padding: 15px;
+}
+
+.lc_content {
+  border: 1px solid black;
+  border-radius: 10px;
+}
+
+.sub_page_title h4 {
+  padding: 15px;
+  margin: -1px -15px 15px -15px;
+  background-color: grey;
+  color: white;
+  border-radius: 10px 10px 0 0;
+}
+
+.btn_save {
+  position: relative;
+  height: 100px;
+}
+
+.btn_save .btn {
+  position: absolute;
+  right: 15px;
+  width: 100px;
+}
+
+#Recent {
+  margin-bottom: 40px;
+}
+
+#surgical_procedure_modal .modal-dialog {
+  max-width: 98%;
+}
+
+.fee_unit {
+  width: 90%;
+  float: right;
+  max-width: 120px;
+  padding: 0;
+  padding-left: 5px;
+}
+
+#gst {
+  padding: .375rem 0;
+  min-width: 130px;
+}
+
+.sub_form {
+  background-color: aliceblue;
+}
+
+#sub_form_modal {
+  background-color: rgba(128, 128, 128, 0.89);
+}
+
+#sub_form_modal .modal-dialog {
+  max-width: 50%;
+}
+/*# sourceMappingURL=style.css.map */
