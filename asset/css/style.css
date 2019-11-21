@@ -37,6 +37,17 @@
   color: white;
 }
 
+.table.non_surgical_table td,
+.table.non_surgical_table th {
+  padding: 0.25rem;
+  text-align: center;
+}
+
+.table.non_surgical_table thead {
+  background-color: #a1a1a1;
+  color: white;
+}
+
 .clear_fix {
   clear: both;
 }
@@ -129,28 +140,50 @@ input {
   max-width: 98%;
 }
 
-.fee_unit {
-  width: 90%;
-  float: right;
-  max-width: 120px;
-  padding: 0;
-  padding-left: 5px;
+.fee {
+  position: absolute;
+  left: 10px;
+  top: 0;
 }
 
-#gst {
-  padding: .375rem 0;
+.fee_unit {
+  padding: 0;
+  padding-left: 25px;
+  line-height: 1;
+  min-width: 90px;
+}
+
+.gst,
+.status {
+  padding: 0 .375rem;
   min-width: 130px;
+  height: calc(2.25rem + -10px);
 }
 
 .sub_form {
   background-color: aliceblue;
+  padding-top: 0;
+  padding-bottom: 0;
+  border: 1px solid lightgrey;
 }
 
-#sub_form_modal {
-  background-color: rgba(128, 128, 128, 0.89);
+@media (min-width: 600px) {
+  #sub_form_modal {
+    background-color: rgba(128, 128, 128, 0.89);
+  }
+  #sub_form_modal .modal-dialog {
+    max-width: 50%;
+  }
 }
 
-#sub_form_modal .modal-dialog {
-  max-width: 50%;
+@media (max-width: 599px) {
+  #sub_form_modal {
+    background-color: rgba(128, 128, 128, 0.89);
+  }
+}
+
+ol.order_list {
+  width: 80%;
+  margin: 1rem auto;
 }
 /*# sourceMappingURL=style.css.map */
