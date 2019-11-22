@@ -163,7 +163,8 @@ input {
     height: calc(2.25rem + -10px);
 }
 
-.sub_form {
+.sub_form,
+.non_surgical_sub_form {
     background-color: aliceblue;
     padding-top: 0;
     padding-bottom: 0;
@@ -186,6 +187,27 @@ input {
 }
 
 ol.order_list {
-    width: 80%;
+    width: 90%;
     margin: 1rem auto;
+}
+
+.signature_box {
+    width: 90%;
+    margin: auto;
+    .principal_name_field {
+        width: 50%;
+        margin: 30px 5%;
+        padding-top: 10px;
+        border-top: 1px solid black;
+        float: left;
+        text-align: center;
+    }
+    .mcr_num {
+        width: 30%;
+        float: left;
+        margin: 30px 5%;
+        padding-top: 10px;
+        border-top: 1px solid black;
+        text-align: center;
+    }
 }
