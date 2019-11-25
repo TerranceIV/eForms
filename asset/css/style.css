@@ -157,7 +157,7 @@ input {
 .status {
   padding: 0 .375rem;
   min-width: 130px;
-  height: calc(2.25rem + -10px);
+  height: 1.5rem !important;
 }
 
 .sub_form,
@@ -209,5 +209,21 @@ ol.order_list {
   padding-top: 10px;
   border-top: 1px solid black;
   text-align: center;
+}
+
+.section_title {
+  padding: 5px 0 5px 15px;
+  background-color: #e2e2e2;
+  width: 100%;
+}
+
+.ds_actions {
+  width: 100%;
+}
+
+.ds_actions button {
+  width: 25%;
+  border: 1px solid #f8f8f8;
+  float: right;
 }
 /*# sourceMappingURL=style.css.map */

@@ -1,6 +1,6 @@
 $(document).ready(function() {
     var id = window.location.href.split('?').pop();
-    if (id >= 3 || id < 0) {
+    if (id > 3 || id < 0) {
         window.location.href = "lc.html?1";
     }
     var patient_list = [{
