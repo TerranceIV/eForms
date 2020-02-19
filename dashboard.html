@@ -7,10 +7,58 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Farrer Park Hospital Discharge eForms</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" href="asset/css/style.css">
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
+    <link href="https://code.jquery.com/ui/1.10.4/themes/ui-lightness/jquery-ui.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+    <script src="https://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+    <link rel="stylesheet" type="text/css" href="asset/css/style.css">
+    <script>
+        $(function() {
+            $("#date_of_from").datepicker({
+                dateFormat: 'dd/mm/yy',
+                // minDate: 0,
+                // maxDate: "+1M +10D"
+                // onSelect: function(dateText, inst) {
+                //     var date_from = $(this).val();
+                //     var date_to = $("#date_of_to").val();
+                //     if (date_from > date_to) {
+                //         alert("please select date earlier than date of discharge to");
+                //         $(this).value = "";
+                //     }
+                // }
+            });
 
 
+            $("#date_of_to").datepicker({
+                dateFormat: 'dd/mm/yy',
+                // minDate: 0,
+                // maxDate: "+1M +10D"
+            });
+            $("#date_of_from2").datepicker({
+                dateFormat: 'dd/mm/yy',
+                // minDate: 0,
+                // maxDate: "+1M +10D"
+                // onSelect: function(dateText, inst) {
+                //     var date_from = $(this).val();
+                //     var date_to = $("#date_of_to").val();
+                //     if (date_from > date_to) {
+                //         alert("please select date earlier than date of discharge to");
+                //         $(this).value = "";
+                //     }
+                // }
+            });
+
+
+            $("#date_of_to2").datepicker({
+                dateFormat: 'dd/mm/yy',
+                // minDate: 0,
+                // maxDate: "+1M +10D"
+            });
+        });
+    </script>
+    <style>
+
+    </style>
 </head>
 
 <body>
@@ -19,13 +67,13 @@
         <header>
             <div id="top_navbar">
                 <div class='logo'>
-                    <a href="dashboard.html"><img src='asset/img/logo.jpg' width='100px' height='50px'></a>
+                    <a href="dashboard.html"><img src='asset/img/logo.jpg'></a>
                 </div>
                 <div class='logged_user'>
 
                     <span>
                       Welcome , Dr. Chiew Kim Huat Richard.   <br>
-                      Your last login was on 3 Mar 2020 12:00pm
+                      Your last login was on 10 Nov 2019 12:01pm
                     </span>
 
                     <button type='button' class='btn logout'>Logout</button>
@@ -38,41 +86,47 @@
             <div class="col-md-12 main-content">
                 <ul class="nav nav-tabs" id="myTab" role="tablist">
                     <li class="nav-item">
-                        <a class="nav-link" id="Recent-tab" data-toggle="tab" href="#Recent" role="tab" aria-controls="Recent" aria-selected="true">Recent</a>
+                        <a class="nav-link active" id="Recent-tab" data-toggle="tab" href="#Recent" role="tab" aria-controls="Recent" aria-selected="true">Recent</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" id="Archives-tab" data-toggle="tab" href="#Archives" role="tab" aria-controls="Archives" aria-selected="false">Archives</a>
+                        <a class="nav-link" id="Archives-tab" data-toggle="tab" href="#Archives" role="tab" aria-controls="Archives" aria-selected="false">Archives</a>
                     </li>
-                    <li class="nav-item">
+                    <!-- <li class="nav-item">
                         <a class="nav-link" id="Reports-tab" data-toggle="tab" href="#Reports" role="tab" aria-controls="Reports" aria-selected="false">Reports</a>
-                    </li>
+                    </li> -->
                 </ul>
                 <div class="tab-content" id="myTabContent">
-                    <div class="tab-pane fade" id="Recent" role="tabpanel" aria-labelledby="Recent-tab">Recent tab</div>
-                    <div class="tab-pane fade show active" id="Archives" role="tabpanel" aria-labelledby="Archives-tab">
+                    <div class="tab-pane fade show active" id="Recent" role="tabpanel" aria-labelledby="Recent-tab">
                         <form action='#' method='post' class='form_filter'>
                             <div class="container-fluid">
                                 <div class="row">
                                     <div class="col-md-3">
                                         <label for="Name"> Patient Name</label>
-                                        <input class="form-control" type='text' name='name'>
+                                        <input class="form-control" type='text' name='name' placeholder="Patient Name">
                                     </div>
                                     <div class="col-md-3">
                                         <div class="form-group">
                                             <label for="Discharge_Status">Discharge Status</label>
                                             <select class="form-control" id="Discharge_Status" name='discharge_status'>
-                                              <option>select ...</option>
-                                              <option>Death</option>
-                                              <option>Death with Coronel Case</option>
-                                              <option>Others</option>
-                                            </select>
+                                                  <option>Patient is Discharged</option>
+                                                  <option>Technical Discharge</option>
+                                                  <option>Death</option>
+                                                  <option>Death with Coronel Case</option>
+                                                  <option>Others / Step Down Care</option>
+                                                  <option>Transfer to Private Hospital</option>
+                                                  <option>Transfer to Public Hospital</option>
+                                                </select>
                                         </div>
                                     </div>
-                                    <div class="col-md-3">
-                                        <label for="Name"> Date of Discharge</label>
-                                        <input class="form-control" type='date' name='date_of_discharge'>
+                                    <div class="col-md-2">
+                                        <label for="Name"> Discharge From</label>
+                                        <input class='form-control' type="text" id="date_of_from2" placeholder="20/11/2019">
                                     </div>
-                                    <div class="col-md-3">
+                                    <div class="col-md-2">
+                                        <label for="Name"> Discharge To</label>
+                                        <input class='form-control' type="text" id="date_of_to2" placeholder="27/11/2019">
+                                    </div>
+                                    <div class="col-md-2">
                                         <button type="button" name='search' class="btn btn-search">Search</button>
                                     </div>
 
@@ -80,16 +134,16 @@
                             </div>
                         </form>
                         <div class='data_filter'>
-                            <p class='num_records'>100 records found</p>
+                            <p class='num_records'>150 records found</p>
                             <div class="form-group rows_per_page">
                                 <select class="form-control" id="rows_per_page" name='rows_per_page'>
-                              <option>Rows per page</option>
-                              <option>25</option>
-                              <option>50</option>
-                              <option>100</option>
-                              <option>200</option>
-                              <option>500</option>
-                            </select>
+                                  <option value='' selected>Rows per page</option>
+                                  <option>25</option>
+                                  <option>50</option>
+                                  <option>100</option>
+                                  <option>200</option>
+                                  <option>500</option>
+                                </select>
                             </div>
                         </div>
                         <table class="table table-bordered table-hover dashboard_table">
@@ -98,7 +152,8 @@
                                     <th scope="col">No.</th>
                                     <th scope="col">Patient Name</th>
                                     <th scope="col">Status</th>
-                                    <th scope="col">TSP(S$)</th>
+                                    <th scope="col">Total Charges (S$)</th>
+                                    <th scope="col">Principal Doctor</th>
                                     <th scope="col">Admitted On</th>
                                     <th scope="col">Discharged On</th>
                                     <th scope="col">Actions</th>
@@ -109,14 +164,15 @@
                                     <th scope="row">1</th>
                                     <td>Chan Ah Tow</td>
                                     <td>Admitted</td>
-                                    <td>0.00</td>
-                                    <td>19/10/2020</td>
-                                    <td>30/10/2020</td>
+                                    <td>24,450.78</td>
+                                    <td>Dr. Beh Suan Tiong</td>
+                                    <td>17/11/2020</td>
+                                    <td></td>
                                     <td>
-                                        <div class="btn-group actions" role="group" aria-label="Basic example">
-                                            <a href='lc.html?1'><button type="button" class="btn btn-primary">LC</button></a>
-                                            <a href='ds.html'><button type="button" class="btn btn-secondary">DS</button></a>
-                                            <a href='#'><button type="button" class="btn btn-info">MC</button></a>
+                                        <div class="btn-group actions" role="group" aria-label="action buttons">
+                                            <a href='lc.html?1'><button type="button" class="btn btn_lc">LC</button></a>
+                                            <a href='ds.html'><button type="button" class="btn btn_ds">DS</button></a>
+                                            <a href='mc.html'><button type="button" class="btn btn_mc">MC</button></a>
                                         </div>
                                     </td>
 
@@ -125,33 +181,82 @@
                                     <th scope="row">2</th>
                                     <td>Sutanto Budi Hartono</td>
                                     <td>Admitted</td>
-                                    <td>100.00</td>
-                                    <td>9/10/2020</td>
-                                    <td>20/10/2020</td>
+                                    <td>18,790.03</td>
+                                    <td>Dr. Chong Keen Wai</td>
+                                    <td>9/11/2020</td>
+                                    <td></td>
                                     <td>
-                                        <div class="btn-group actions" role="group" aria-label="Basic example">
-                                            <a href='lc.html?2'><button type="button" class="btn btn-primary">LC</button></a>
-                                            <a href='#'><button type="button" class="btn btn-secondary">DS</button></a>
-                                            <a href='#'><button type="button" class="btn btn-info">MC</button></a>
+                                        <div class="btn-group actions" role="group" aria-label="action buttons">
+                                            <a href='lc.html?2'><button type="button" class="btn btn_lc">LC</button></a>
+                                            <a href='ds.html'><button type="button" class="btn btn_ds">DS</button></a>
+                                            <a href='mc.html'><button type="button" class="btn btn_mc">MC</button></a>
                                         </div>
                                     </td>
                                 </tr>
                                 <tr>
                                     <th scope="row">3</th>
                                     <td>Micheal Philip</td>
-                                    <td>Discharged</td>
-                                    <td>1232130.00</td>
-                                    <td>10/10/2020</td>
-                                    <td>20/10/2020</td>
+                                    <td>Admitted</td>
+                                    <td>36,720.10</td>
+                                    <td>Dr. Jarrod Lee Piao</td>
+                                    <td>7/11/2020</td>
+                                    <td></td>
                                     <td>
-                                        <div class="btn-group actions" role="group" aria-label="Basic example">
-                                            <a href='lc.html?3'><button type="button" class="btn btn-primary">LC</button></a>
-                                            <a href='#'><button type="button" class="btn btn-secondary">DS</button></a>
-                                            <a href='#'><button type="button" class="btn btn-info">MC</button></a>
+                                        <div class="btn-group actions" role="group" aria-label="action buttons">
+                                            <a href='lc.html?3'><button type="button" class="btn btn_lc">LC</button></a>
+                                            <a href='ds.html'><button type="button" class="btn btn_ds">DS</button></a>
+                                            <a href='mc.html'><button type="button" class="btn btn_mc">MC</button></a>
                                         </div>
                                     </td>
                                 </tr>
-
+                                <tr>
+                                    <th scope="row">4</th>
+                                    <td>James Lee Chee How</td>
+                                    <td>Admitted</td>
+                                    <td>21,720.14</td>
+                                    <td>Dr. Leo Pien Ming</td>
+                                    <td>30/10/2020</td>
+                                    <td></td>
+                                    <td>
+                                        <div class="btn-group actions" role="group" aria-label="action buttons">
+                                            <a href='lc.html?3'><button type="button" class="btn btn_lc">LC</button></a>
+                                            <a href='ds.html'><button type="button" class="btn btn_ds">DS</button></a>
+                                            <a href='mc.html'><button type="button" class="btn btn_mc">MC</button></a>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">5</th>
+                                    <td>Leong How Sheng</td>
+                                    <td>Discharged</td>
+                                    <td>10,760.12</td>
+                                    <td>Dr. Ong Kong Wee</td>
+                                    <td>10/10/2020</td>
+                                    <td>24/10/2020</td>
+                                    <td>
+                                        <div class="btn-group actions" role="group" aria-label="action buttons">
+                                            <a href='lc.html?3'><button type="button" class="btn btn_lc">LC</button></a>
+                                            <a href='ds.html'><button type="button" class="btn btn_ds">DS</button></a>
+                                            <a href='mc.html'><button type="button" class="btn btn_mc">MC</button></a>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">6</th>
+                                    <td>Kelsi Snow</td>
+                                    <td>Discharged</td>
+                                    <td>5,760.49</td>
+                                    <td>Dr. Steven Kum</td>
+                                    <td>7/10/2020</td>
+                                    <td>24/10/2020</td>
+                                    <td>
+                                        <div class="btn-group actions" role="group" aria-label="action buttons">
+                                            <a href='lc.html?3'><button type="button" class="btn btn_lc">LC</button></a>
+                                            <a href='ds.html'><button type="button" class="btn btn_ds">DS</button></a>
+                                            <a href='mc.html'><button type="button" class="btn btn_mc">MC</button></a>
+                                        </div>
+                                    </td>
+                                </tr>
                             </tbody>
                         </table>
                         <nav aria-label="Page navigation example">
@@ -170,6 +275,279 @@
                             </ul>
                         </nav>
                     </div>
+                    <div class="tab-pane fade" id="Archives" role="tabpanel" aria-labelledby="Archives-tab">
+                        <form action='#' method='post' class='form_filter'>
+                            <div class="container-fluid">
+                                <div class="row">
+                                    <div class="col-md-3">
+                                        <label for="Name"> Patient Name</label>
+                                        <input class="form-control" type='text' name='name' placeholder="Patient Name">
+                                    </div>
+                                    <div class="col-md-3">
+                                        <div class="form-group">
+                                            <label for="Discharge_Status">Discharge Status</label>
+                                            <select class="form-control" id="Discharge_Status" name='discharge_status'>
+                                                          <option>Patient is Discharged</option>
+                                                          <option>Technical Discharge</option>
+                                                          <option>Death</option>
+                                                          <option>Death with Coronel Case</option>
+                                                          <option>Others / Step Down Care</option>
+                                                          <option>Transfer to Private Hospital</option>
+                                                          <option>Transfer to Public Hospital</option>
+                                                        </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-2">
+                                        <label for="Name"> Discharge From</label>
+                                        <input class='form-control' type="text" id="date_of_from" placeholder="20/11/2019">
+                                    </div>
+                                    <div class="col-md-2">
+                                        <label for="Name"> Discharge To</label>
+                                        <input class='form-control' type="text" id="date_of_to" placeholder="27/11/2019">
+                                    </div>
+                                    <div class="col-md-2">
+                                        <button type="button" name='search' class="btn btn-search">Search</button>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </form>
+                        <div class='data_filter'>
+                            <p class='num_records'>505 records found</p>
+                            <div class="form-group rows_per_page">
+                                <select class="form-control" id="rows_per_page" name='rows_per_page'>
+                              <option>Rows per page</option>
+                              <option>25</option>
+                              <option>50</option>
+                              <option>100</option>
+                              <option>200</option>
+                              <option>500</option>
+                            </select>
+                            </div>
+                        </div>
+                        <table class="table table-bordered table-hover dashboard_table">
+                            <thead>
+                                <tr>
+                                    <th scope="col">No.</th>
+                                    <th scope="col">Patient Name</th>
+                                    <th scope="col">Status</th>
+                                    <th scope="col">Total Charges (S$)</th>
+                                    <th scope="col">Principal Doctor</th>
+                                    <th scope="col">Admitted On</th>
+                                    <th scope="col">Discharged From</th>
+                                    <th scope="col">Discharged To</th>
+                                    <th scope="col">Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <th scope="row">1</th>
+                                    <td>Payton Rosales</td>
+                                    <td>Discharged</td>
+                                    <td>5,010.78</td>
+                                    <td>Dr. Yue Wai Mun</td>
+                                    <td>19/9/2019</td>
+                                    <td>19/9/2019</td>
+                                    <td>30/9/2019</td>
+                                    <td>
+                                        <div class="btn-group actions" role="group" aria-label="action buttons">
+                                            <a href='lc.html?1'><button type="button" class="btn btn_lc">LC</button></a>
+                                            <a href='ds.html'><button type="button" class="btn btn_ds">DS</button></a>
+                                            <a href='mc.html'><button type="button" class="btn btn_mc">MC</button></a>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">2</th>
+                                    <td>Jamel Whitehead</td>
+                                    <td>Discharged</td>
+                                    <td>4,020.71</td>
+                                    <td>Dr. James Woo</td>
+                                    <td>18/9/2019</td>
+                                    <td>18/9/2019</td>
+                                    <td>25/9/2019</td>
+                                    <td>
+                                        <div class="btn-group actions" role="group" aria-label="action buttons">
+                                            <a href='lc.html?1'><button type="button" class="btn btn_lc">LC</button></a>
+                                            <a href='ds.html'><button type="button" class="btn btn_ds">DS</button></a>
+                                            <a href='mc.html'><button type="button" class="btn btn_mc">MC</button></a>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">3</th>
+                                    <td>Alessandra Walker</td>
+                                    <td>Discharged</td>
+                                    <td>13,420.81</td>
+                                    <td>Dr. Stephen Chang</td>
+                                    <td>18/9/2019</td>
+                                    <td>18/9/2019</td>
+                                    <td>24/9/2019</td>
+                                    <td>
+                                        <div class="btn-group actions" role="group" aria-label="action buttons">
+                                            <a href='lc.html?1'><button type="button" class="btn btn_lc">LC</button></a>
+                                            <a href='ds.html'><button type="button" class="btn btn_ds">DS</button></a>
+                                            <a href='mc.html'><button type="button" class="btn btn_mc">MC</button></a>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">4</th>
+                                    <td>Chantel Phillips</td>
+                                    <td>Discharged</td>
+                                    <td>17,423.41</td>
+                                    <td>Dr. Yeap Choong Lieng</td>
+                                    <td>16/9/2019</td>
+                                    <td>16/9/2019</td>
+                                    <td>20/9/2019</td>
+                                    <td>
+                                        <div class="btn-group actions" role="group" aria-label="action buttons">
+                                            <a href='lc.html?1'><button type="button" class="btn btn_lc">LC</button></a>
+                                            <a href='ds.html'><button type="button" class="btn btn_ds">DS</button></a>
+                                            <a href='mc.html'><button type="button" class="btn btn_mc">MC</button></a>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">5</th>
+                                    <td>Melanie Gross</td>
+                                    <td>Discharged</td>
+                                    <td>8,423.31</td>
+                                    <td>Dr. Andrew Yam Kean Tuck</td>
+                                    <td>15/9/2019</td>
+                                    <td>15/9/2019</td>
+                                    <td>22/9/2019</td>
+                                    <td>
+                                        <div class="btn-group actions" role="group" aria-label="action buttons">
+                                            <a href='lc.html?1'><button type="button" class="btn btn_lc">LC</button></a>
+                                            <a href='ds.html'><button type="button" class="btn btn_ds">DS</button></a>
+                                            <a href='mc.html'><button type="button" class="btn btn_mc">MC</button></a>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">6</th>
+                                    <td>Gregg Perry</td>
+                                    <td>Discharged</td>
+                                    <td>6,129.00</td>
+                                    <td>Dr. Balvinder Singh</td>
+                                    <td>15/9/2019</td>
+                                    <td>15/9/2019</td>
+                                    <td>19/9/2019</td>
+                                    <td>
+                                        <div class="btn-group actions" role="group" aria-label="action buttons">
+                                            <a href='lc.html?1'><button type="button" class="btn btn_lc">LC</button></a>
+                                            <a href='ds.html'><button type="button" class="btn btn_ds">DS</button></a>
+                                            <a href='mc.html'><button type="button" class="btn btn_mc">MC</button></a>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">7</th>
+                                    <td>Sakina Gallegos</td>
+                                    <td>Discharged</td>
+                                    <td>20,167.40</td>
+                                    <td>Dr. Balvinder Singh</td>
+                                    <td>12/9/2019</td>
+                                    <td>12/9/2019</td>
+                                    <td>15/9/2019</td>
+                                    <td>
+                                        <div class="btn-group actions" role="group" aria-label="action buttons">
+                                            <a href='lc.html?1'><button type="button" class="btn btn_lc">LC</button></a>
+                                            <a href='ds.html'><button type="button" class="btn btn_ds">DS</button></a>
+                                            <a href='mc.html'><button type="button" class="btn btn_mc">MC</button></a>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">8</th>
+                                    <td>Reef Flores</td>
+                                    <td>Discharged</td>
+                                    <td>16,679.33</td>
+                                    <td>Dr. Chin Yee Lee</td>
+                                    <td>09/9/2019</td>
+                                    <td>09/9/2019</td>
+                                    <td>14/9/2019</td>
+                                    <td>
+                                        <div class="btn-group actions" role="group" aria-label="action buttons">
+                                            <a href='lc.html?1'><button type="button" class="btn btn_lc">LC</button></a>
+                                            <a href='ds.html'><button type="button" class="btn btn_ds">DS</button></a>
+                                            <a href='mc.html'><button type="button" class="btn btn_mc">MC</button></a>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">9</th>
+                                    <td>Leia Schroeder</td>
+                                    <td>Discharged</td>
+                                    <td>18,729.46</td>
+                                    <td>Dr. Chia Kok Hoong</td>
+                                    <td>06/9/2019</td>
+                                    <td>06/9/2019</td>
+                                    <td>13/9/2019</td>
+                                    <td>
+                                        <div class="btn-group actions" role="group" aria-label="action buttons">
+                                            <a href='lc.html?1'><button type="button" class="btn btn_lc">LC</button></a>
+                                            <a href='ds.html'><button type="button" class="btn btn_ds">DS</button></a>
+                                            <a href='mc.html'><button type="button" class="btn btn_mc">MC</button></a>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">10</th>
+                                    <td>Bryan Miranda</td>
+                                    <td>Discharged</td>
+                                    <td>22,009.26</td>
+                                    <td>Dr. Dennis Koh</td>
+                                    <td>06/9/2019</td>
+                                    <td>06/9/2019</td>
+                                    <td>10/9/2019</td>
+                                    <td>
+                                        <div class="btn-group actions" role="group" aria-label="action buttons">
+                                            <a href='lc.html?1'><button type="button" class="btn btn_lc">LC</button></a>
+                                            <a href='ds.html'><button type="button" class="btn btn_ds">DS</button></a>
+                                            <a href='mc.html'><button type="button" class="btn btn_mc">MC</button></a>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">11</th>
+                                    <td>Muhammad Mendoza</td>
+                                    <td>Discharged</td>
+                                    <td>26,679.26</td>
+                                    <td>Dr. Dennis Koh</td>
+                                    <td>06/9/2019</td>
+                                    <td>06/9/2019</td>
+                                    <td>09/9/2019</td>
+                                    <td>
+                                        <div class="btn-group actions" role="group" aria-label="action buttons">
+                                            <a href='lc.html?1'><button type="button" class="btn btn_lc">LC</button></a>
+                                            <a href='ds.html'><button type="button" class="btn btn_ds">DS</button></a>
+                                            <a href='mc.html'><button type="button" class="btn btn_mc">MC</button></a>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">12</th>
+                                    <td>Tyron Powers</td>
+                                    <td>Discharged</td>
+                                    <td>4,079.10</td>
+                                    <td>Dr. John Law</td>
+                                    <td>06/9/2019</td>
+                                    <td>06/9/2019</td>
+                                    <td>08/9/2019</td>
+                                    <td>
+                                        <div class="btn-group actions" role="group" aria-label="action buttons">
+                                            <a href='lc.html?1'><button type="button" class="btn btn_lc">LC</button></a>
+                                            <a href='ds.html'><button type="button" class="btn btn_ds">DS</button></a>
+                                            <a href='mc.html'><button type="button" class="btn btn_mc">MC</button></a>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                    </div>
                     <div class="tab-pane fade" id="Reports" role="tabpanel" aria-labelledby="contact-tab">Reports tab</div>
                 </div>
 
@@ -181,7 +559,7 @@
     </div>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <!-- <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script> -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 

@@ -1,3 +1,74 @@
+@import url(http://fonts.googleapis.com/css?family=Lato:100,400);
+.nav-pills .nav-link.active,
+.nav-pills .show > .nav-link {
+  background-color: #981a31;
+}
+
+a {
+  color: black;
+}
+
+a:hover {
+  color: #981a31;
+}
+
+.tab-pane {
+  background-color: white;
+}
+
+.page-link {
+  color: #981a31;
+}
+
+.page-link:hover {
+  color: #981a31;
+}
+
+.page-item.active .page-link {
+  border-color: #981a31;
+  background-color: #981a31;
+}
+
+.btn_lc, .btn_ds, .btn_mc {
+  outline: 0;
+  padding-bottom: 10px;
+  border: none;
+  -webkit-transition: all .3s ease-out;
+  transition: all .3s ease-out;
+  -webkit-box-shadow: inset 0 -6px 0 0 rgba(0, 0, 0, 0.2);
+          box-shadow: inset 0 -6px 0 0 rgba(0, 0, 0, 0.2);
+}
+
+.btn_lc:active, .btn_ds:active, .btn_mc:active {
+  -webkit-box-shadow: inset 0 -2px 0 0 rgba(168, 168, 168, 0.2);
+          box-shadow: inset 0 -2px 0 0 rgba(168, 168, 168, 0.2);
+}
+
+.btn_lc {
+  background-color: #6c1b78;
+  color: white;
+}
+
+.btn_ds {
+  background-color: #487035;
+  color: white;
+}
+
+.btn_mc {
+  background-color: #971a30;
+  color: white;
+}
+
+.none {
+  display: none;
+}
+
+.logo a img {
+  float: left;
+  width: 190px;
+  height: 60px;
+}
+
 #top_navbar {
   padding-top: 1rem;
 }
@@ -26,6 +97,15 @@
   padding: 5px 10px;
 }
 
+@media (max-width: 767px) {
+  #top_navbar .logo {
+    float: none;
+  }
+  #top_navbar .logo a img {
+    float: none;
+  }
+}
+
 .table.dashboard_table td,
 .table.dashboard_table th {
   padding: 0.25rem;
@@ -35,6 +115,7 @@
 .table.dashboard_table thead {
   background-color: grey;
   color: white;
+  font-weight: 700;
 }
 
 .table.non_surgical_table td,
@@ -44,8 +125,9 @@
 }
 
 .table.non_surgical_table thead {
-  background-color: #a1a1a1;
+  background-color: grey;
   color: white;
+  font-weight: 700;
 }
 
 .clear_fix {
@@ -69,7 +151,7 @@ input {
 .btn-search {
   width: 100%;
   margin-top: 32px;
-  background-color: #ab0000;
+  background-color: #981a31;
   color: white;
 }
 
@@ -81,17 +163,23 @@ input {
 
 .data_filter .rows_per_page {
   float: right;
-  width: 30%;
+  width: 15%;
 }
 
 .actions {
   width: 100%;
+  padding: 5px;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
 }
 
-.actions .btn {
+.actions a {
+  width: 33.33%;
+}
+
+.actions a button.btn {
+  width: 100%;
   margin-right: -3px;
 }
 
@@ -116,28 +204,42 @@ input {
 .sub_page_title h4 {
   padding: 15px;
   margin: -1px -15px 15px -15px;
-  background-color: grey;
+  background-color: #981a31;
   color: white;
   border-radius: 10px 10px 0 0;
 }
 
-.btn_save {
-  position: relative;
-  height: 100px;
+.footer_btn_save {
+  padding: 10px 15px;
+  width: 100%;
+  color: white;
+  background-color: #981a31;
+  margin-bottom: 3rem;
+  -webkit-transition: all .2s ease-out;
+  transition: all .2s ease-out;
 }
 
-.btn_save .btn {
-  position: absolute;
-  right: 15px;
-  width: 100px;
+.footer_btn_save:hover {
+  -webkit-transform: translateY(-5px);
+  transform: translateY(-5px);
 }
 
 #Recent {
   margin-bottom: 40px;
 }
 
+.surgical_procedure_modal {
+  -webkit-transition: 2s;
+  transition: 2s;
+}
+
 #surgical_procedure_modal .modal-dialog {
   max-width: 98%;
+}
+
+.sp_title {
+  margin-bottom: 10px;
+  color: #981a31;
 }
 
 .fee {
@@ -173,7 +275,7 @@ input {
     background-color: rgba(128, 128, 128, 0.89);
   }
   #sub_form_modal .modal-dialog {
-    max-width: 50%;
+    max-width: 60%;
   }
 }
 
@@ -193,11 +295,11 @@ ol.order_list {
   margin: auto;
 }
 
-.signature_box .principal_name_field {
+.signature_box .principal_name {
   width: 50%;
-  margin: 30px 5%;
+  margin: 30px 5% 0 5%;
   padding-top: 10px;
-  border-top: 1px solid black;
+  border-bottom: 1px solid black;
   float: left;
   text-align: center;
 }
@@ -205,15 +307,34 @@ ol.order_list {
 .signature_box .mcr_num {
   width: 30%;
   float: left;
-  margin: 30px 5%;
+  margin: 30px 5% 0 5%;
   padding-top: 10px;
-  border-top: 1px solid black;
+  border-bottom: 1px solid black;
   text-align: center;
+}
+
+.signature_box .principal_name_field {
+  width: 50%;
+  margin: 0px 5% 30px 5%;
+  padding-top: 10px;
+  float: left;
+  text-align: center;
+  font-size: 14px;
+}
+
+.signature_box .mcr_field {
+  width: 30%;
+  margin: 0 5% 30px 5%;
+  padding-top: 10px;
+  float: left;
+  text-align: center;
+  font-size: 14px;
 }
 
 .section_title {
   padding: 5px 0 5px 15px;
-  background-color: #e2e2e2;
+  background-color: #981a31;
+  color: white;
   width: 100%;
 }
 
@@ -222,8 +343,107 @@ ol.order_list {
 }
 
 .ds_actions button {
-  width: 25%;
+  width: 22%;
+  margin-right: 2%;
   border: 1px solid #f8f8f8;
   float: right;
+}
+
+.mc_actions {
+  width: 100%;
+}
+
+.mc_actions button {
+  width: 49%;
+  margin-right: 2%;
+  border: 1px solid #f8f8f8;
+  float: right;
+}
+
+.center {
+  text-align: center;
+}
+
+.bg-theme {
+  background-color: #981a31;
+}
+
+.mb20 {
+  margin-bottom: 20px;
+}
+
+#timer .countdown-wrapper {
+  margin: 0 auto;
+}
+
+#timer #countdown {
+  font-family: 'Lato', sans-serif;
+  text-align: right;
+  color: #eee;
+  padding: 22px 0;
+}
+
+#timer #countdown .well b {
+  color: black;
+}
+
+#timer .countdown-wrapper #countdown .timer {
+  margin: 2px;
+  padding: 5px 15px;
+  font-size: 20px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+#timer .countdown-wrapper #countdown span,
+#timer .countdown-wrapper #countdown span:hover {
+  -webkit-box-shadow: 0 0 0 1px rgba(221, 102, 122, 0.5);
+  box-shadow: 0 0 0 1px rgba(221, 102, 122, 0.5);
+}
+
+#timer .countdown-wrapper .card .card-footer .btn {
+  margin: 2px 0;
+}
+
+.info {
+  width: 100%;
+  font-weight: bold;
+}
+
+.p_info {
+  padding: 10px;
+  font-weight: bold;
+  margin-left: 0;
+  margin-bottom: 10px;
+  border: 3px solid #981a31;
+  border-radius: 0 30px 30px 0;
+}
+
+.ui-datepicker-header.ui-widget-header.ui-helper-clearfix.ui-corner-all {
+  background: #981a31;
+}
+
+.ui-datepicker-calendar {
+  background: white;
+}
+
+.ui-state-hover,
+.ui-widget-content .ui-state-hover,
+.ui-state-focus,
+.ui-widget-content .ui-state-focus {
+  background: white;
+  color: #981a31;
+  border: 1px solid #981a31;
+}
+
+.ui-state-highlight {
+  border: 1px solid #981a31 !important;
+  color: #981a31 !important;
+  background: #f6f6f6 url(images/ui-bg_glass_100_f6f6f6_1x400.png) 50% 50% repeat-x !important;
+}
+
+.ui-state-active {
+  color: white !important;
+  background: #981a31 !important;
 }
 /*# sourceMappingURL=style.css.map */

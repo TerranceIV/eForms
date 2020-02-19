@@ -7,8 +7,20 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Farrer Park Hospital Discharge eForms</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" href="asset/css/style.css">
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
+    <link href="https://code.jquery.com/ui/1.10.4/themes/ui-lightness/jquery-ui.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+    <script src="https://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+    <link rel="stylesheet" type="text/css" href="asset/css/style.css">
+    <script>
+        $(function() {
+            $("#date_of_discharge").datepicker({
+                dateFormat: 'dd/mm/yy',
+                // minDate: 0,
+                // maxDate: "+1M +10D"
+            });
+        });
+    </script>
 </head>
 
 <body>
@@ -16,13 +28,13 @@
         <header>
             <div id="top_navbar">
                 <div class='logo'>
-                    <a href="dashboard.html"><img src='asset/img/logo.jpg' width='100px' height='50px'></a>
+                    <a href="dashboard.html"><img src='asset/img/logo.jpg'></a>
                 </div>
                 <div class='logged_user'>
 
                     <span>
-                      Welcome , Dr. Chiew Kim Huat Richard.   <br>
-                      Your last login was on 3 Mar 2020 12:00pm
+                        Welcome , Dr. Chiew Kim Huat Richard.   <br>
+                        Your last login was on 10 Nov 2019 12:01pm
                     </span>
 
                     <button type='button' class='btn logout'>Logout</button>
@@ -37,16 +49,16 @@
                     <li class="nav-item">
                         <a class="nav-link active" id="Recent-tab" data-toggle="tab" href="#Recent" role="tab" aria-controls="Recent" aria-selected="true">Recent</a>
                     </li>
-                    <li class="nav-item">
+                    <!-- <li class="nav-item">
                         <a class="nav-link" id="Archives-tab" data-toggle="tab" href="#Archives" role="tab" aria-controls="Archives" aria-selected="false">Archives</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" id="Reports-tab" data-toggle="tab" href="#Reports" role="tab" aria-controls="Reports" aria-selected="false">Reports</a>
-                    </li>
+                    </li> -->
                 </ul>
                 <div class="tab-content" id="myTabContent">
                     <div class="tab-pane show active" id="Recent" role="tabpanel" aria-labelledby="Recent-tab">
-                        <h3 class='page_title'>Discharge Summary</h3>
+                        <h3 class='page_title center'>Discharge Summary</h3>
 
                         <div class="container-fluid">
                             <div class="row">
@@ -119,21 +131,31 @@
                                 <div class="col-sm-3">
                                     <label>Date of Discharge :</label>
                                 </div>
-                                <div class="col-sm-9">
-                                    <label class='date_of_discharge'></label>
+                                <div class="col-sm-3">
+                                    <input class='form-control' type="text" id="date_of_discharge" placeholder="27/11/2019">
                                 </div>
+                                <div class="col-sm-6"></div>
+                                <div class="m_15"></div>
                                 <div class="col-sm-3">
                                     <label>Discharge Status :</label>
                                 </div>
                                 <div class="col-sm-3">
-                                    <label class='discharge_status'></label>
+                                    <select class="form-control" id="Discharge_Status" name='discharge_status'>
+                                        <option>Patient is Discharged</option>
+                                        <option>Technical Discharge</option>
+                                        <option>Death</option>
+                                        <option>Death with Coronel Case</option>
+                                        <option>Others / Step Down Care</option>
+                                        <option>Transfer to Private Hospital</option>
+                                        <option>Transfer to Public Hospital</option>
+                                    </select>
                                 </div>
                                 <div class="col-sm-6"></div>
-
+                                <div class="m_15"></div>
                                 <div class="clearfix"></div>
                                 <h4 class='section_title'>Discharge Diagnosis</h4>
                                 <div class="col-md-3">
-                                    <label>Principal Diagnosis :</label>
+                                    <label><span style='color:red'>*</span>Principal Diagnosis :</label>
                                 </div>
                                 <div class="col-md-9">
                                     <input class="form-control" type='text' name='name'>
@@ -159,7 +181,7 @@
                                       <option> D24</option>
                                       <option>K510</option>
                                       <option> L720</option>
-                                  </select>
+                                    </select>
                                 </div>
 
                                 <div class='m_15'></div>
@@ -201,14 +223,15 @@
                                     </div>
                                 </div>
                                 <div class='m_15'></div>
-                                <!-- <div class="col-md-3">
+                                <div class="col-md-3">
                                     <label></label>
                                 </div>
                                 <div class="col-md-9">
                                     <button type="button" class='btn' id='addButton'><i class="fas fa-plus"></i> Add Field</button>
                                     <button type="button" class='btn' id='removeButton'><i class="fas fa-minus"></i> Remove Field</button>
-                                </div> -->
-                                <h4 class='section_title'>Procedure Summary </h4>
+                                </div>
+                                <div class='m_15'></div>
+                                <h4 class='section_title'><span style='color:red'>*</span>Procedure Summary </h4>
                                 <div class="col-sm-12">
                                     <table class="table table-bordered table-hover dashboard_table">
                                         <thead>
@@ -222,19 +245,19 @@
                                         <tbody>
                                             <tr>
                                                 <th scope="row">1</th>
-                                                <td>17/07/19</td>
+                                                <td>17/07/20</td>
                                                 <td>SA701S : Skin and Subcutaneous Tissue, Tumor/Cyst/Ulcer/Scar, Excision biopsy, removal of 2 or more or recurrent or complicated (adherent), excision</td>
 
                                             </tr>
                                             <tr>
                                                 <th scope="row">2</th>
-                                                <td>23/07/19</td>
+                                                <td>23/07/20</td>
                                                 <td>SA704B : Breasts, Lumps, imaging Guided Vaccum assisted Biopsy / Mammodome, Single lesion</td>
 
                                             </tr>
                                             <tr>
                                                 <th scope="row">3</th>
-                                                <td>31/07/19</td>
+                                                <td>31/07/20</td>
                                                 <td>SA824B : Breast, Tumor (malignant), Simple Mastectomy with Axiliary Clearance, with/without Sentinel Node Biopsy</td>
 
                                             </tr>
@@ -260,19 +283,19 @@
                                         <tbody>
                                             <tr>
                                                 <th scope="row">1</th>
-                                                <td>17/07/19</td>
+                                                <td>17/07/20</td>
                                                 <td>Drug A</td>
 
                                             </tr>
                                             <tr>
                                                 <th scope="row">2</th>
-                                                <td>23/07/19</td>
+                                                <td>23/07/20</td>
                                                 <td>Drug B</td>
 
                                             </tr>
                                             <tr>
                                                 <th scope="row">3</th>
-                                                <td>31/07/19</td>
+                                                <td>31/07/20</td>
                                                 <td>Drug C</td>
                                             </tr>
                                         </tbody>
@@ -316,7 +339,7 @@
                                 </div>
                                 <h4 class='section_title'>Allergies/Adverse Reactions</h4>
                                 <div class="col-sm-12">
-                                    Allergies on Drug XXX................
+                                    Allergies on Drug xxx................
                                 </div>
                                 <div class='m_15'></div>
                                 <h4 class='section_title'>Covering Doctor</h4>
@@ -324,13 +347,13 @@
                                     Doctor Name :
                                 </div>
                                 <div class="col-sm-9">
-                                    XXX
+                                    Dr. Chiew Kim Huat Richard
                                 </div>
                                 <div class="col-sm-3">
                                     Doctor MCR No :
                                 </div>
                                 <div class="col-sm-9">
-                                    ABXXX
+                                    03792C
                                 </div>
                                 <div class='m_15'></div>
                                 <div class='m_15'></div>
@@ -341,10 +364,10 @@
                                 <div class="col-sm-6">
                                     <div class="btn-group ds_actions" role="group" aria-label="Basic example">
 
-                                        <button type="button" class="btn">Save As a Draft</button>
-                                        <button type="button" class="btn">Submit</button>
-                                        <button type="button" class="btn">Withdraw</button>
-                                        <button type="button" class="btn ">Print</button>
+                                        <button type="button" class="btn footer_btn_save mb-0">Save As a Draft</button>
+                                        <button type="button" class="btn footer_btn_save mb-0">Submit</button>
+                                        <button type="button" class="btn footer_btn_save mb-0">Withdraw</button>
+                                        <button type="button" class="btn footer_btn_save mb-0" onClick="window.print()">Print</button>
                                     </div>
                                 </div>
                                 <div class='m_15'></div>
@@ -354,8 +377,8 @@
                                 <div class="col-sm-6">
                                     <div class="btn-group ds_actions" role="group" aria-label="Basic example">
 
-                                        <button type="button" class="btn">Addendum</button>
-                                        <button type="button" class="btn">New</button>
+                                        <button type="button" class="btn footer_btn_save mb-0">Addendum</button>
+                                        <button type="button" class="btn footer_btn_save mb-0">New</button>
 
                                     </div>
                                 </div>
@@ -373,7 +396,7 @@
 
             <!-- Optional JavaScript -->
             <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-            <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+            <!-- <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script> -->
             <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
             <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
             <script src='asset/js/ds.js'></script>

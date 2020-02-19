@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Farrer Park Hospital Discharge eForms</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
+    <link href="https://code.jquery.com/ui/1.10.4/themes/ui-lightness/jquery-ui.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+    <script src="https://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+    <link rel="stylesheet" type="text/css" href="asset/css/style.css">
+    <script>
+        $(function() {
+            $("#unfit_duty_from").datepicker({
+                dateFormat: 'dd/mm/yy',
+                // minDate: 0,
+                // maxDate: "+1M +10D"
+            });
+            $("#unfit_duty_to").datepicker({
+                dateFormat: 'dd/mm/yy',
+                // minDate: 0,
+                // maxDate: "+1M +10D"
+            });
+            $("#date_from").datepicker({
+                dateFormat: 'dd/mm/yy',
+                // minDate: 0,
+                // maxDate: "+1M +10D"
+            });
+            $("#date_to").datepicker({
+                dateFormat: 'dd/mm/yy',
+                // minDate: 0,
+                // maxDate: "+1M +10D"
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <div class="container-fluid">
+        <header>
+            <div id="top_navbar">
+                <div class='logo'>
+                    <a href="dashboard.html"><img src='asset/img/logo.jpg'></a>
+                </div>
+                <div class='logged_user'>
+
+                    <span>
+                        Welcome , Dr. Chiew Kim Huat Richard.   <br>
+                        Your last login was on 10 Nov 2019 12:01pm
+                    </span>
+
+                    <button type='button' class='btn logout'>Logout</button>
+
+                </div>
+            </div>
+        </header>
+        <div class="clear_fix"></div>
+        <div class="row">
+            <div class="col-md-12 main-content">
+                <ul class="nav nav-tabs" id="myTab" role="tablist">
+                    <li class="nav-item">
+                        <a class="nav-link active" id="Recent-tab" data-toggle="tab" href="#Recent" role="tab" aria-controls="Recent" aria-selected="true">Recent</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="Archives-tab" data-toggle="tab" href="#Archives" role="tab" aria-controls="Archives" aria-selected="false">Archives</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="Reports-tab" data-toggle="tab" href="#Reports" role="tab" aria-controls="Reports" aria-selected="false">Reports</a>
+                    </li>
+                </ul>
+                <div class="tab-content" id="myTabContent">
+                    <div class="tab-pane show active" id="Recent" role="tabpanel" aria-labelledby="Recent-tab">
+                        <h3 class='page_title center'>Discharge Summary</h3>
+
+                        <div class="container-fluid">
+                            <div class="row">
+                                <div class="col-sm-6">
+
+                                </div>
+                                <div class="col-sm-3">
+                                    <label>Serial Number :</label>
+                                </div>
+                                <div class="col-sm-3">
+                                    <label class='p_name'></label>
+                                </div>
+                                <div class="col-sm-6">
+
+                                </div>
+                                <div class="col-sm-3">
+                                    <label>Date/Time :</label>
+                                </div>
+                                <div class="col-sm-3">
+                                    <label class='date'>10/11/2019</label>
+                                </div>
+                                <div class="m_15"></div>
+                                <div class="m_15"></div>
+                                <div class="m_15"></div>
+                                <div class="col-sm-3">
+                                    <label>Name :</label>
+                                </div>
+                                <div class="col-sm-3">
+                                    <label class='p_name'></label>
+                                </div>
+                                <div class="col-sm-3">
+                                    <label>Medical Record No :</label>
+                                </div>
+                                <div class="col-sm-3">
+                                    <label class='p_medical_no'></label>
+                                </div>
+                                <div class="col-sm-3">
+                                    <label>Date of Birth :</label>
+                                </div>
+                                <div class="col-sm-3">
+                                    <label class='p_dob'></label>
+                                </div>
+                                <div class="col-sm-3">
+                                    <label>Patient Status :</label>
+                                </div>
+                                <div class="col-sm-3">
+                                    <label class='p_status'>Discharged</label>
+                                </div>
+                                <div class="col-sm-3">
+                                    <label>Attending Doctor :</label>
+                                </div>
+                                <div class="col-sm-3">
+                                    <label class='attend_doctor'>Dr. Chiew Kim Huat Richard</label>
+                                </div>
+
+                                <div class="col-sm-3">
+                                    <label>Patient Acccount No. :</label>
+                                </div>
+                                <div class="col-sm-3">
+                                    <label class='acc_no'></label>
+                                </div>
+
+                                <div class="col-sm-3">
+                                    <label>PType of Medical Leave Granted :</label>
+                                </div>
+                                <div class="col-sm-3">
+                                    <select class="form-control" name='type_mc'>
+                                            <option>Hospitalisation Leave</option>
+                                            <option>...</option>
+                                            <option>...</option>
+                                        </select>
+                                </div>
+                                <div class="col-sm-6"></div>
+                                <div class="m_15"></div>
+                                <div class="col-sm-3">
+                                    <label><span style='color:red'>*</span>Number of Days :</label>
+                                </div>
+                                <div class="col-sm-3">
+                                    <input type="number" class="form-control" name='no_of_days'>
+                                </div>
+                                <div class="col-sm-6"></div>
+                                <div class="m_15"></div>
+                                <div class="col-sm-3">
+                                    <label><span style='color:red'>*</span>Unfit for Duty From :</label>
+                                </div>
+                                <div class="col-sm-3">
+                                    <input class='form-control' type="text" id="unfit_duty_from" name='unfit_duty_from' placeholder="20/11/2019">
+                                </div>
+                                <div class="col-sm-6"></div>
+                                <div class="m_15"></div>
+                                <div class="col-sm-3">
+                                    <label><span style='color:red'>*</span>Unfit for Duty To :</label>
+                                </div>
+                                <div class="col-sm-3">
+                                    <input class='form-control' type="text" id="unfit_duty_to" name='unfit_duty_to' placeholder="22/11/2019">
+                                </div>
+                                <div class="col-sm-6"></div>
+                                <div class="m_15"></div>
+                                <div class="col-sm-3">
+                                    <label>Fit For Light Duty:</label>
+                                </div>
+                                <div class="col-sm-3">
+                                    <select name="light_duty" id="" class="form-control">
+                                      <option value="yes">Yes</option>
+                                      <option value='no'>No</option>
+                                    </select>
+                                </div>
+                                <div class="col-sm-6"></div>
+                                <div class="m_15"></div>
+                                <div class="col-sm-3">
+                                    <label>Date From :</label>
+                                </div>
+                                <div class="col-sm-3">
+                                    <input class='form-control' type="text" id="date_from" name='date_from' placeholder="28/11/2019">
+                                </div>
+                                <div class="col-sm-6"></div>
+                                <div class="m_15"></div>
+                                <div class="col-sm-3">
+                                    <label>Date To :</label>
+                                </div>
+                                <div class="col-sm-3">
+                                    <input class='form-control' type="text" id="date_to" name='date_to' placeholder="28/11/2019">
+                                </div>
+                                <div class="col-sm-6"></div>
+                                <div class="m_15"></div>
+
+                                <!-- section2 -->
+                                <h4 class='section_title'>Activities Exempted</h4>
+                                <div class="col-sm-12">
+                                    <textarea rows="10" name="activities_examptede" style='width:100%;'></textarea>
+                                </div>
+                                <div class='m_15'></div>
+                                <h4 class='section_title'>Covering Doctor</h4>
+                                <div class='m_15'></div>
+                                <div class='m_15'></div>
+                                <div class='m_15'></div>
+                                <div class="col-sm-3">
+                                    Doctor Name :
+                                </div>
+                                <div class="col-sm-9">
+                                    Dr Chong Kwan Yin
+                                </div>
+                                <div class="col-sm-3">
+                                    Doctor MCR No :
+                                </div>
+                                <div class="col-sm-9">
+                                    03792C
+                                </div>
+                                <div class='m_15'></div>
+                                <div class='m_15'></div>
+                                <div class='m_15'></div>
+
+
+                                <div class="col-sm-9">
+
+                                </div>
+                                <div class="col-sm-3">
+                                    <div class="btn-group mc_actions" role="group" aria-label="Basic example">
+
+                                        <button type="button" class="btn footer_btn_save">Submit</button>
+                                        <button type="button" class="btn footer_btn_save" onClick="window.print()">Print</button>
+
+                                    </div>
+                                </div>
+                                <div class='m_15'></div>
+                            </div>
+                        </div>
+
+
+                    </div>
+                    <div class="tab-pane fade" id="Archives" role="tabpanel" aria-labelledby="Archives-tab">Archives tab</div>
+                    <div class="tab-pane fade" id="Reports" role="tabpanel" aria-labelledby="Reports-tab">Reports tab</div>
+
+                </div>
+            </div>
+
+            <!-- Optional JavaScript -->
+            <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+            <!-- <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script> -->
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+            <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+            <script src='asset/js/ds.js'></script>
+</body>
+
+</html>

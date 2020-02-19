@@ -1,84 +1,33 @@
-$(document).ready(function() {
-    var id = window.location.href.split('?').pop();
-    if (id > 3 || id < 0) {
-        window.location.href = "lc.html?1";
-    }
-    var patient_list = [{
-            p_name: "Chan Ah Tow",
-            nric: "900816172368",
-            acc_no: "AB8237861a",
-            date_admission: "19/10/2020",
-            date_discharge: "30/10/2020",
-            case_type: "Day Surgery",
-            admitting_speciality: "08 General Surgery",
-        }, {
-            p_name: "Sutanto Budi Hartono",
-            nric: "780816123368",
-            acc_no: "AB8232456a",
-            date_admission: "9/10/2020",
-            date_discharge: "20/10/2020",
-            case_type: "Day Surgery",
-            admitting_speciality: "18 Obstetrics",
-        }, {
-            p_name: "Micheal Philip",
-            nric: "900818372379",
-            acc_no: "AB2379123697a",
-            date_admission: "10/10/2020",
-            date_discharge: "20/10/2020",
-            case_type: "Day Surgery",
-            admitting_speciality: "32 Urology",
-        }
-
-    ]
-
-    let this_patient = patient_list[id - 1];
-    for (var v in this_patient) {
-        $("label." + v).text(this_patient[v]);
+var patient_list = [{
+        p_name: "Chan Ah Tow",
+        nric: "900816172368",
+        acc_no: "AB8237861a",
+        date_admission: "19/10/2020",
+        date_discharge: "30/10/2020",
+        case_type: "Day Surgery",
+        admitting_speciality: "08 General Surgery",
+        principal_doctor: "Dr. Beh Suan Tiong",
+    }, {
+        p_name: "Sutanto Budi Hartono",
+        nric: "780816123368",
+        acc_no: "AB8232456a",
+        date_admission: "9/10/2020",
+        date_discharge: "20/10/2020",
+        case_type: "Day Surgery",
+        admitting_speciality: "18 Obstetrics",
+        principal_doctor: "Dr. Chong Keen Wai",
+    }, {
+        p_name: "Micheal Philip",
+        nric: "900818372379",
+        acc_no: "AB2379123697a",
+        date_admission: "10/10/2020",
+        date_discharge: "20/10/2020",
+        case_type: "Day Surgery",
+        admitting_speciality: "32 Urology",
+        principal_doctor: "Dr. Jarrod Lee Piao",
     }
 
-
-    var counter = 2;
-    $("#addButton").click(function() {
-
-        // if (counter > 10) {
-        //     alert("Only 10 textboxes allow");
-        //     return false;
-        // }
-        var newTextBoxDiv = $(document.createElement('div'));
-
-        var newField = `<div class="input-group" id="TextBoxDiv${counter}">
-                            <div class="m_15"></div>
-                            <div class="input-group-prepend">
-                              <span class="input-group-text">${counter}.</span>
-                            </div>
-                            <input class="form-control" type='text' name='others_diagnosis[]'>
-                        </div>
-                      `;
-        newTextBoxDiv.after().html(newField);
-        newTextBoxDiv.appendTo("#others_diagnosis_field");
-        counter++;
-    });
-
-    $("#removeButton").click(function() {
-        if (counter == 2) {
-            alert("At least 1 field of textbox for secondary diagnosis");
-            return false;
-        }
-        counter--;
-
-        $("#TextBoxDiv" + counter).remove();
-
-    });
-
-});
-
-$("select#surgical_procedure").change(function() {
-    var selectedSP = $(this).children("option:selected").html();
-
-    $('#surgical_procedure_modal').modal('show');
-    $('#surgical_procedure_modal').find('.modal-title').text(selectedSP);
-    // alert("You have selected the surgical procedure - " + selectedSP);
-});
+];
 var doctor_list = [{
         type: "Principal Surgeon",
         name: "Dr Richard Chew Kim Huat",
@@ -101,10 +50,29 @@ var doctor_list = [{
 
 ];
 
+
+$(document).ready(function() {
+    var id = window.location.href.split('?').pop();
+    if (id > 3 || id < 0) {
+        window.location.href = "lc.html?1";
+    }
+
+    let this_patient = patient_list[id - 1];
+    for (var v in this_patient) {
+        $("label." + v).text(this_patient[v]);
+    }
+
+});
+
+
 var data_id;
 $('.sub_form').click((e) => {
     data_id = e.currentTarget.dataset.id;
+    console.log(data_id);
     let this_doctor = doctor_list[data_id - 1];
+    if (data_id == '') {
+        data_id = 1;
+    }
     for (var v in this_doctor) {
         $("label." + v).text(this_doctor[v]);
     }
@@ -204,8 +172,7 @@ $("select[name='gst2']").change(function() {
 
 $('button.save_surgical_info').click(() => {
     cal_total();
-    $('#surgical_procedure_modal').modal('hide');
-
+    alert("Total Surgical Charges saved");
 })
 
 $(".save_other_fees2").click(() => {
@@ -331,3 +298,119 @@ function cal_total() {
     $(".Total_Charges1").text("$" + Total_Charges1.toFixed(2)).attr("value", Total_Charges1.toFixed(2));
     $(".Total_Charges2").text("$" + Total_Charges2.toFixed(2)).attr("value", Total_Charges2.toFixed(2));
 }
+
+//default count down timer
+$('#countdown #hour').html("1");
+$('#countdown #min').html("00");
+$('#countdown #sec').html("00");
+
+$(document).ready(function() {
+    var hours = 0;
+    var min = 59;
+    var sec = 59;
+    var count_alert = 0;
+
+    setInterval(function time() {
+
+        var d = new Date();
+        // var hours = 24 - d.getHours();
+        // var min = 60 - d.getMinutes();
+        // var sec = 60 - d.getSeconds();
+
+        if ((min + '').length == 1) {
+            min = '0' + min;
+        }
+        if ((sec + '').length == 1) {
+            sec = '0' + sec;
+        }
+        $('#countdown #hour').html(hours);
+        $('#countdown #min').html(min);
+        $('#countdown #sec').html(sec);
+
+        //count after 0;
+        if (min <= 0 && sec <= 1 && count_alert == 0) {
+
+            alert('Times Out！');
+            window.location.href = "dashboard.html";
+            count_alert++;
+            return;
+        }
+        sec--;
+
+        if (sec == 0) {
+            sec = 59;
+            min--;
+        }
+
+
+    }, 1000);
+});
+
+$('.surgical_procedure_table').hide(1000);
+$("select#surgical_procedure").change(function() {
+    var selectedSP = $(this).children("option:selected").val();
+    if (selectedSP == '') {
+        $('.surgical_procedure_table').addClass('none');
+    } else {
+        $('.sp_title').first().html(" <i class='fas fa-caret-right''></i> Surgical Procedure of " + selectedSP);
+        // var clone_item = $(".surgical_procedure_table").first();
+        $('.surgical_procedure_table').show(1000);
+    }
+    if (selectedSP == "SA701S") {
+
+    } else if (selectedSP == "SA704B") {
+
+    } else {
+
+    }
+
+});
+
+
+var num = 1;
+var num_clone = 1;
+for (let i = 1; i < 20; i++) {
+    $("body").delegate("select#surgical_procedure.clone" + i + "_sp", "change", function() {
+        var selectedSP = $(this).children("option:selected").val();
+        if (selectedSP == '') {
+            $('.clone' + num_clone + '_spt').hide(1000);
+        } else {
+            $('p.sp_title').last().html(" <i class='fas fa-caret-right''></i> Surgical Procedure of " + selectedSP);
+            $('.clone' + num_clone + '_spt').show(1000).removeClass('none');
+            num_clone++;
+        }
+
+    });
+
+}
+
+//add field section
+$("#addField").click(function() {
+    var clone_pos = $(".surgical_procedure_table").last();
+    var cloned_table = $(".surgical_procedure_table:first-child").clone().addClass('clone' + num + '_spt');
+    var cloned_select = $("#surgical_procedure").clone().addClass('clone' + num + '_sp').css({
+        "float": "left",
+        "width": "49%",
+        "margin-right": "2%",
+    });
+    var cloned_select_no = $("#nature_of_operation").clone().addClass('clone' + num + '_no').css({
+        "float": "left",
+        "width": "49%",
+    });
+    clone_pos.after(cloned_table.addClass("none")).after(cloned_select_no).after(cloned_select);
+    num++;
+});
+
+//remove field section
+$("#removeField").click(function() {
+    if (num != 1) {
+        $("select#surgical_procedure.clone" + (num - 1) + "_sp").remove();
+        $("select#nature_of_operation.clone" + (num - 1) + "_no").remove();
+        $(".surgical_procedure_table.clone" + (num - 1) + "_spt").remove();
+        num--;
+        num_clone--;
+    } else {
+        alert("Surgical Procedure should not less than 1");
+    }
+
+});

@@ -16,14 +16,14 @@
         <header>
             <div id="top_navbar">
                 <div class='logo'>
-                    <a href="dashboard.html"><img src='asset/img/logo.jpg' width='100px' height='50px'></a>
+                    <a href="dashboard.html"><img src='asset/img/logo.jpg'></a>
                 </div>
                 <div class='logged_user'>
 
                     <span>
-                      Welcome , Dr. Chiew Kim Huat Richard.   <br>
-                      Your last login was on 3 Mar 2020 12:00pm
-                    </span>
+                        Welcome , Dr. Chiew Kim Huat Richard.   <br>
+                        Your last login was on 10 Nov 2019 12:01pm
+                      </span>
 
                     <button type='button' class='btn logout'>Logout</button>
 
@@ -37,18 +37,59 @@
                     <li class="nav-item">
                         <a class="nav-link active" id="Recent-tab" data-toggle="tab" href="#Recent" role="tab" aria-controls="Recent" aria-selected="true">Recent</a>
                     </li>
-                    <li class="nav-item">
+                    <!-- <li class="nav-item">
                         <a class="nav-link" id="Archives-tab" data-toggle="tab" href="#Archives" role="tab" aria-controls="Archives" aria-selected="false">Archives</a>
-                    </li>
-                    <li class="nav-item">
+                    </li> -->
+                    <!-- <li class="nav-item">
                         <a class="nav-link" id="Reports-tab" data-toggle="tab" href="#Reports" role="tab" aria-controls="Reports" aria-selected="false">Reports</a>
-                    </li>
+                    </li> -->
                 </ul>
                 <div class="tab-content" id="myTabContent">
                     <div class="tab-pane show active" id="Recent" role="tabpanel" aria-labelledby="Recent-tab">
-                        <h3 class='page_title'>Letter of Certification</h3>
 
-                        <div class="container-fluid" style='padding-left:0;'>
+                        <div class="container-fluid">
+                            <section id="timer">
+                                <div class="row">
+                                    <div class="col-sm-6" style='padding:0'>
+                                        <h3 class='page_title'>Letter of Certification</h3>
+                                    </div>
+                                    <div class="col-sm-6 countdown-wrapper text-center mb20" style='padding:0'>
+
+                                        <div id="countdown">
+                                            <div class="well">
+                                                <span id="hour" class="timer bg-theme"></span> <b>h</b>
+                                                <span id="min" class="timer bg-theme"></span> <b>m</b>
+                                                <span id="sec" class="timer bg-theme"></span> <b>s</b>
+                                            </div>
+                                        </div>
+
+                                    </div>
+
+                                </div>
+                            </section>
+                        </div>
+                        <div class="clear_fix"></div>
+                        <div class="container-fluid " style='padding-left:0;'>
+                            <div class="row p_info">
+                                <div class="col-sm-1">
+                                    <label>Name :</label>
+                                </div>
+                                <div class="col-md-3">
+                                    <label class='p_name info'></label>
+                                </div>
+                                <div class="col-sm-2">
+                                    <label>Patient Acccount No. :</label>
+                                </div>
+                                <div class="col-md-2">
+                                    <label class="acc_no info"></label>
+                                </div>
+                                <div class="col-sm-2">
+                                    <label>Principal Doctor :</label>
+                                </div>
+                                <div class="col-md-2">
+                                    <label class="principal_doctor info"></label>
+                                </div>
+                            </div>
                             <div class="row">
                                 <div class="col-md-2">
                                     <div class="nav flex-column nav-pills" id="side-tab" role="tablist" aria-orientation="vertical">
@@ -58,7 +99,7 @@
                                         <a class="nav-link" id="side-tab-non-surgical-treatment-tab" data-toggle="pill" href="#side-tab-non-surgical-treatment" role="tab" aria-controls="side-tab-non-surgical-treatment" aria-selected="false">Non-Surgical Treatment</a>
                                         <a class="nav-link" id="side-tab-total-surgical-non-surgical-tab" data-toggle="pill" href="#side-tab-total-surgical-non-surgical" role="tab" aria-controls="side-tab-total-surgical-non-surgical" aria-selected="false">Total Surgical and Non-Surgical Charges</a>
                                         <a class="nav-link" id="side-tab-certification-tab" data-toggle="pill" href="#side-tab-certification" role="tab" aria-controls="side-tab-certification" aria-selected="false">Certification</a>
-                                        <a class="nav-link" id="side-tab-audit-tab" data-toggle="pill" href="#side-tab-audit" role="tab" aria-controls="side-tab-audit" aria-selected="false">Audit Information</a>
+
                                     </div>
                                 </div>
                                 <div class="col-md-10 lc_content">
@@ -66,7 +107,6 @@
                                         <div class="tab-pane fade show active" id="side-tab-patient-particulars" role="tabpanel" aria-labelledby="side-tab-patient-particulars-tab">
                                             <div class='sub_page_title'>
                                                 <h4>
-
                                                     A. Patient Particulars
                                                 </h4>
                                                 <div class="clear_fix"></div>
@@ -156,55 +196,20 @@
                                                         <div class="container-fluid" style='padding:0;'>
                                                             <div class="row">
                                                                 <div class="col-md-3">
-                                                                    <label>Principal Diagnosis :</label>
+                                                                    <label><span style='color:red'>*</span> Principal Diagnosis :</label>
                                                                 </div>
                                                                 <div class="col-md-9">
-                                                                    <input class="form-control" type='text' name='name'>
+                                                                    <label>D24 : Benign neoplasm of breast</label>
                                                                 </div>
                                                                 <div class='m_15'></div>
                                                                 <div class="col-md-3">
                                                                     <label>Secondary Diagnosis :</label>
                                                                 </div>
-                                                                <div class="col-md-6">
+                                                                <div class="col-md-9">
                                                                     <div id='secondary_diagnosis_field'>
-                                                                        <div class="input-group" id="TextBoxDiv1">
-                                                                            <div class="input-group-prepend">
-                                                                                <span class="input-group-text">1.</span>
-                                                                            </div>
-                                                                            <input class="form-control" type='text' name='secondary_diagnosis[]'>
-                                                                        </div>
+                                                                        <label>1) L720 : Epidermal Cyst</label>
+                                                                        <br> <label>2) C501 : Malignant neoplasm of central portion of breast</label>
                                                                     </div>
-                                                                </div>
-                                                                <div class="col-md-3">
-                                                                    <select class="form-control" name='diagnosis_code'>
-                                                                      <option>C501</option>
-                                                                      <option> D24</option>
-                                                                      <option>K510</option>
-                                                                      <option> L720</option>
-                                                                    </select>
-                                                                </div>
-
-                                                                <div class='m_15'></div>
-                                                                <div class="col-md-3">
-                                                                    <label></label>
-                                                                </div>
-                                                                <div class="col-md-6">
-                                                                    <div id='secondary_diagnosis_field'>
-                                                                        <div class="input-group" id="TextBoxDiv1">
-                                                                            <div class="input-group-prepend">
-                                                                                <span class="input-group-text">2.</span>
-                                                                            </div>
-                                                                            <input class="form-control" type='text' name='secondary_diagnosis[]'>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="col-md-3">
-                                                                    <select class="form-control" name='diagnosis_code'>
-                                                                      <option>C501</option>
-                                                                      <option> D24</option>
-                                                                      <option selected>K510</option>
-                                                                      <option> L720</option>
-                                                                    </select>
                                                                 </div>
 
                                                                 <div class='m_15'></div>
@@ -213,26 +218,11 @@
                                                                 </div>
                                                                 <div class="col-md-9">
                                                                     <div id='others_diagnosis_field'>
-                                                                        <div class="input-group" id="TextBoxDiv1">
-                                                                            <div class="input-group-prepend">
-                                                                                <span class="input-group-text">1.</span>
-                                                                            </div>
-                                                                            <input class="form-control" type='text' name='other_diagnosis[]'>
-                                                                        </div>
+                                                                        <label>1) K210: Gastro-oesophageal reflux disease with oesophageal</label>
                                                                     </div>
                                                                 </div>
-                                                                <div class='m_15'></div>
-                                                                <div class="col-md-3">
-                                                                    <label></label>
-                                                                </div>
-                                                                <div class="col-md-9">
-                                                                    <button type="button" class='btn' id='addButton'><i class="fas fa-plus"></i> Add Field</button>
-                                                                    <button type="button" class='btn' id='removeButton'><i class="fas fa-minus"></i> Remove Field</button>
-                                                                </div>
-                                                                <div class='m_15'></div>
-                                                                <div class='btn_save'>
-                                                                    <button type="button" class='btn'>Save</button>
-                                                                </div>
+
+
                                                             </div>
                                                         </div>
 
@@ -271,13 +261,13 @@
                                                                 </div>
                                                                 <div class='m_15'></div>
                                                                 <div class="col-md-6">
-                                                                    <label>Surgical Procedure :</label>
+                                                                    <label><span style='color:red'>*</span> Surgical Procedure :</label>
                                                                     <select class="form-control" id="surgical_procedure" name='surgical_procedure'>
                                                                           <option value=''>select ...</option>
-                                                                          <option value='sp1'>SA701S : Skin and Subcutaneous Tissue, Tumor/Cyst/Ulcer/Scar, Excision biopsy, removal of 2 or more or recurrent or complicated (adherent), excision</option>
-                                                                          <option value='sp2'>SA704B : Breasts, Lumps, imaging Guided Vaccum assisted Biopsy / Mammodome, Single lesion</option>
-                                                                          <option value='sp3'>SA824B : Breast, Tumor (malignant), Simple Mastectomy with Axiliary Clearance, with/without Sentinel Node Biopsy</option>
-                                                                        </select>
+                                                                          <option value='SA701S'>SA701S : Skin and Subcutaneous Tissue, Tumor/Cyst/Ulcer/Scar, Excision biopsy, removal of 2 or more or recurrent or complicated (adherent), excision</option>
+                                                                          <option value='SA704B'>SA704B : Breasts, Lumps, imaging Guided Vaccum assisted Biopsy / Mammodome, Single lesion</option>
+                                                                          <option value='SA824B'>SA824B : Breast, Tumor (malignant), Simple Mastectomy with Axiliary Clearance, with/without Sentinel Node Biopsy</option>
+                                                                    </select>
 
                                                                 </div>
                                                                 <div class="col-md-6">
@@ -290,7 +280,126 @@
                                                                             <option>Staged</option>
                                                                           </select>
                                                                 </div>
+                                                                <div class="m_15"></div>
 
+
+                                                                <div class="col-md-12 ">
+                                                                    <div class="surgical_procedure_table">
+                                                                        <p class='sp_title'></p>
+                                                                        <div class="table-responsive">
+                                                                            <table class="table table-bordered table-hover dashboard_table">
+                                                                                <thead>
+                                                                                    <tr>
+                                                                                        <th scope="col">Doctor Type</th>
+                                                                                        <th scope="col">Doctor Name</th>
+                                                                                        <th scope="col">MCR No.</th>
+                                                                                        <th scope="col">Professional Fees</th>
+                                                                                        <th scope="col">Implant Fees</th>
+                                                                                        <th scope="col">Other Fees</th>
+                                                                                        <th scope="col">Total Surgical Fees</th>
+                                                                                        <th scope="col">GST</th>
+                                                                                        <th scope="col">Charges with GST</th>
+                                                                                        <th scope="col"><span style='color:red'>*</span> Fees to be collected (NC/FC)</th>
+                                                                                        <th scope="col">Status</th>
+                                                                                    </tr>
+                                                                                </thead>
+                                                                                <tbody>
+                                                                                    <tr>
+                                                                                        <th scope="row">Principal Surgeon</th>
+                                                                                        <td><label class='doctor_name'>Dr. Richard Chew Kim Huat </label></td>
+                                                                                        <td><label class="mcr_no">01877E</label></td>
+
+                                                                                        <td>
+                                                                                            <div style='position:relative;'>
+                                                                                                <span class='fee'>$</span>
+                                                                                                <input class="form-control fee_unit" type="number" name="professional_fee1" step="0.01" value='0.00' required>
+                                                                                            </div>
+                                                                                        </td>
+                                                                                        <td>
+                                                                                            <div style='position:relative;'>
+                                                                                                <span class='fee'>$</span>
+                                                                                                <input class="form-control fee_unit" type="number" name="implant_fee1" step="0.01" value='0.00' required>
+                                                                                            </div>
+                                                                                        </td>
+                                                                                        <td> <span id='other_fee1' value='0.00'>$0.00 </span> <button type="button" class='btn sub_form' data-toggle="modal" data-target="#sub_form_modal" data-id="1">sub-form</button></td>
+                                                                                        <td> <span id='total_fee1' value='0.00'>$0.00 </span></td>
+                                                                                        <td>
+                                                                                            <select class="form-control gst" name='gst1'>
+                                                                                                      <option value=''>select ...</option>
+                                                                                                      <option value='charged'>Charged</option>
+                                                                                                      <option value='waived'>Waived</option>
+                                                                                                      <option value='not_registered'>Not Registered</option>
+                                                                                                    </select>
+                                                                                        </td>
+                                                                                        <td> <span id='charged_gst_fee1' value='0.00'>$0.00 </span></td>
+                                                                                        <td width='150px'>
+                                                                                            <div style='position:relative;'>
+                                                                                                <span class='fee'>$</span>
+                                                                                                <input class="form-control fee_unit" type="number" name="fee_collected1" step="0.01" value='0.00' required>
+                                                                                            </div>
+                                                                                        </td>
+                                                                                        <td> <select class="form-control status" name='status'>
+                                                                                                    <option>Completed</option>
+                                                                                                    <option>Saved as Draft</option>
+                                                                                                  </select>
+                                                                                        </td>
+                                                                                    </tr>
+                                                                                    <tr>
+                                                                                        <th scope="row">Anaesthetist</th>
+                                                                                        <td>Dr. Chong Kwan Yin</td>
+                                                                                        <td>03792C</td>
+                                                                                        <td>
+                                                                                            <div style='position:relative;'>
+                                                                                                <span class='fee'>$</span>
+                                                                                                <input class="form-control fee_unit" type="number" name="professional_fee2" step="0.01" value='0.00' required>
+                                                                                            </div>
+                                                                                        </td>
+                                                                                        <td>
+                                                                                            <div style='position:relative;'>
+                                                                                                <span class='fee'>$</span>
+                                                                                                <input class="form-control fee_unit" type="number" name="implant_fee2" step="0.01" value='0.00' required>
+                                                                                            </div>
+                                                                                        </td>
+                                                                                        <td> <span id='other_fee2' value='0.00'>$0.00 </span> <button type="button" class='btn sub_form' data-toggle="modal" data-target="#sub_form_modal" data-id="2">sub-form</button></td>
+                                                                                        <td> <span id='total_fee2' value='0.00'>$0.00 </span></td>
+                                                                                        <td>
+                                                                                            <select class="form-control gst" name='gst2'>
+                                                                                                      <option value=''>select ...</option>
+                                                                                                      <option value='charged'>Charged</option>
+                                                                                                      <option value='waived'>Waived</option>
+                                                                                                      <option value='not_registered'>Not Registered</option>
+                                                                                                    </select>
+                                                                                        </td>
+                                                                                        <td> <span id='charged_gst_fee2' value='0.00'>$0.00 </span></td>
+                                                                                        <td width='150px'>
+                                                                                            <div style='position:relative;'>
+                                                                                                <span class='fee'>$</span>
+                                                                                                <input class="form-control fee_unit" type="number" name="fee_collected2" step="0.01" value='0.00' required>
+                                                                                            </div>
+                                                                                        </td>
+                                                                                        <td> <select class="form-control status" name='status'>
+                                                                                                    <option>Completed</option>
+                                                                                                    <option>Saved as Draft</option>
+                                                                                                  </select>
+                                                                                        </td>
+                                                                                    </tr>
+
+                                                                                </tbody>
+                                                                            </table>
+
+                                                                        </div>
+                                                                    </div>
+
+                                                                </div>
+                                                                <div class="m_15"></div>
+                                                                <div class="col-md-12">
+                                                                    <button type="button" class='btn' id='addField'><i class="fas fa-plus"></i> Add Field</button>
+                                                                    <button type="button" class='btn' id='removeField'><i class="fas fa-minus"></i> Remove Field</button>
+                                                                </div>
+                                                                <div class="m_15"></div>
+                                                                <div class="col-md-2 offset-md-10">
+                                                                    <button type="button" class="btn footer_btn_save save_surgical_info">Save</button>
+                                                                </div>
                                                             </div>
                                                         </div>
 
@@ -320,7 +429,7 @@
                                                             <th scope="col">Total Non-Surgical Fees</th>
                                                             <th scope="col">GST</th>
                                                             <th scope="col">Charges with GST</th>
-                                                            <th scope="col">Fees to be collected *(NC/FC)</th>
+                                                            <th scope="col"><span style='color:red'>*</span> Fees to be collected (NC/FC)</th>
                                                             <th scope="col">Status</th>
                                                         </tr>
                                                     </thead>
@@ -394,8 +503,8 @@
                                                     </tbody>
                                                 </table>
                                             </div>
-                                            <div class='btn_save'>
-                                                <button type="button" class='btn btn-primary save_non_surgical_info'>Save</button>
+                                            <div class="col-md-2 offset-md-10">
+                                                <button type="button" class='btn footer_btn_save save_non_surgical_info'>Save</button>
                                             </div>
                                             <div class='m_15'></div>
                                         </div>
@@ -480,154 +589,58 @@
                                                 <div class='m_15'></div>
                                                 <div class='m_15'></div>
                                                 <div class='signature_box'>
-                                                    <p class='principal_name_field'>principal_name_field</p>
-                                                    <p class='mcr_num'>MCR</p>
+                                                    <p class='principal_name'>
+                                                        <span>Dr Richard Chew Kim Huat </span>
+
+                                                    </p>
+                                                    <p class='mcr_num'>01877E</p>
 
                                                 </div>
                                                 <div class='signature_box'>
-                                                    <p class='principal_name_field'>Signatture of Principal Surgeon & Date</p>
+                                                    <p class='principal_name_field'>
+                                                        <span>Name of Principal Surgeon</span>
+
+                                                    </p>
+                                                    <p class='mcr_field'>MCR Number</p>
+
                                                 </div>
+                                                <div class='signature_box'>
+                                                    <p style='text-align:center;'>This is an electronically signed copy and does not require signature.<span style='color:red;'>*</span></p>
+                                                </div>
+
+                                                <div class='m_15'></div>
                                             </div>
 
 
                                         </div>
-                                        <div class="tab-pane fade" id="side-tab-audit" role="tabpanel" aria-labelledby="side-tab-audit-tab">Audit</div>
+
                                     </div>
                                 </div>
-
+                                <div class="m_15"></div>
+                                <div class="col-md-2 offset-md-8">
+                                    <button type="button" class='btn footer_btn_save'>Completed</button>
+                                </div>
+                                <div class="col-md-2">
+                                    <button type="button" class='btn footer_btn_save' onClick="window.print()">Print</button>
+                                </div>
                             </div>
 
                         </div>
+
+
+
 
                     </div>
                     <div class="tab-pane fade" id="Archives" role="tabpanel" aria-labelledby="Archives-tab">Archives tab</div>
-                    <div class="tab-pane fade" id="Reports" role="tabpanel" aria-labelledby="Reports-tab">Reports tab</div>
+                    <!-- <div class="tab-pane fade" id="Reports" role="tabpanel" aria-labelledby="Reports-tab">Reports tab</div> -->
 
                 </div>
             </div>
 
-            <!-- surgical_procedure_modal -->
-            <div class="modal fade" id="surgical_procedure_modal" tabindex="-1" role="dialog" aria-labelledby="surgical_procedure_modal" aria-hidden="true">
-                <div class="modal-dialog modal-dialog-centered">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h5 class="modal-title" id="ModalCenterTitle">Surgical Procedure</h5>
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                              <span aria-hidden="true">&times;</span>
-                            </button>
-                        </div>
-                        <div class="modal-body">
-                            <div class="table-responsive">
-                                <table class="table table-bordered table-hover dashboard_table">
-                                    <thead>
-                                        <tr>
-                                            <th scope="col">Doctor Type</th>
-                                            <th scope="col">Doctor Name</th>
-                                            <th scope="col">MCR No.</th>
-                                            <th scope="col">Professional Fees</th>
-                                            <th scope="col">Implant Fees</th>
-                                            <th scope="col">Other Fees</th>
-                                            <th scope="col">Total Surgical Fees</th>
-                                            <th scope="col">GST</th>
-                                            <th scope="col">Charges with GST</th>
-                                            <th scope="col">Fees to be collected *(NC/FC)</th>
-                                            <th scope="col">Status</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-                                            <th scope="row">Principal Surgeon</th>
-                                            <td>Dr Richard Chew Kim Huat</td>
-                                            <td>01877E</td>
+            <!-- <div class="col-md-2 offset-md-10">
+                <button type="button" class="btn footer_btn_save">Save</button>
+            </div> -->
 
-                                            <td>
-                                                <div style='position:relative;'>
-                                                    <span class='fee'>$</span>
-                                                    <input class="form-control fee_unit" type="number" name="professional_fee1" step="0.01" value='0.00' required>
-                                                </div>
-                                            </td>
-                                            <td>
-                                                <div style='position:relative;'>
-                                                    <span class='fee'>$</span>
-                                                    <input class="form-control fee_unit" type="number" name="implant_fee1" step="0.01" value='0.00' required>
-                                                </div>
-                                            </td>
-                                            <td> <span id='other_fee1' value='0.00'>$0.00 </span> <button type="button" class='btn sub_form' data-toggle="modal" data-target="#sub_form_modal" data-id="1">sub-form</button></td>
-                                            <td> <span id='total_fee1' value='0.00'>$0.00 </span></td>
-                                            <td>
-                                                <select class="form-control gst" name='gst1'>
-                                              <option value=''>select ...</option>
-                                              <option value='charged'>Charged</option>
-                                              <option value='waived'>Waived</option>
-                                              <option value='not_registered'>Not Registered</option>
-                                            </select>
-                                            </td>
-                                            <td> <span id='charged_gst_fee1' value='0.00'>$0.00 </span></td>
-                                            <td width='150px'>
-                                                <div style='position:relative;'>
-                                                    <span class='fee'>$</span>
-                                                    <input class="form-control fee_unit" type="number" name="fee_collected1" step="0.01" value='0.00' required>
-                                                </div>
-                                            </td>
-                                            <td> <select class="form-control status" name='status'>
-                                            <option>Completed</option>
-                                            <option>Saved as Draft</option>
-                                          </select>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <th scope="row">Anaesthetist</th>
-                                            <td>Dr Chong Kwan Yin</td>
-                                            <td>03792C</td>
-                                            <td>
-                                                <div style='position:relative;'>
-                                                    <span class='fee'>$</span>
-                                                    <input class="form-control fee_unit" type="number" name="professional_fee2" step="0.01" value='0.00' required>
-                                                </div>
-                                            </td>
-                                            <td>
-                                                <div style='position:relative;'>
-                                                    <span class='fee'>$</span>
-                                                    <input class="form-control fee_unit" type="number" name="implant_fee2" step="0.01" value='0.00' required>
-                                                </div>
-                                            </td>
-                                            <td> <span id='other_fee2' value='0.00'>$0.00 </span> <button type="button" class='btn sub_form' data-toggle="modal" data-target="#sub_form_modal" data-id="2">sub-form</button></td>
-                                            <td> <span id='total_fee2' value='0.00'>$0.00 </span></td>
-                                            <td>
-                                                <select class="form-control gst" name='gst2'>
-                                              <option value=''>select ...</option>
-                                              <option value='charged'>Charged</option>
-                                              <option value='waived'>Waived</option>
-                                              <option value='not_registered'>Not Registered</option>
-                                            </select>
-                                            </td>
-                                            <td> <span id='charged_gst_fee2' value='0.00'>$0.00 </span></td>
-                                            <td width='150px'>
-                                                <div style='position:relative;'>
-                                                    <span class='fee'>$</span>
-                                                    <input class="form-control fee_unit" type="number" name="fee_collected2" step="0.01" value='0.00' required>
-                                                </div>
-                                            </td>
-                                            <td> <select class="form-control status" name='status'>
-                                            <option>Completed</option>
-                                            <option>Saved as Draft</option>
-                                          </select>
-                                            </td>
-                                        </tr>
-
-
-
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
-                            <button type="button" class="btn btn-primary save_surgical_info">Save</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
 
             <!-- sub_form_modal -->
             <div class="modal fade" id="sub_form_modal" tabindex="-1" role="dialog" aria-labelledby="sub_form_modal" aria-hidden="true">

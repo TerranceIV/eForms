@@ -1,7 +1,78 @@
-$theme-color: rgb(171, 0, 0);
+$theme-bg-color: #981a31;
+$theme-font-color:white;
+$first-color:#6c1b78;
+$secondary-color: #487035;
+$third-color:#971a30;
 $font-small: 12px;
 $bright-font: white;
 $dark-font:black;
+.nav-pills .nav-link.active,
+.nav-pills .show>.nav-link {
+    background-color: $theme-bg-color;
+}
+
+a {
+    color: black;
+    &:hover {
+        color: $theme-bg-color;
+    }
+}
+
+.tab-pane {
+    background-color: $theme-font-color;
+}
+
+.page-link {
+    color: $theme-bg-color;
+    &:hover {
+        color: $theme-bg-color;
+    }
+}
+
+.page-item.active .page-link {
+    border-color: $theme-bg-color;
+    background-color: $theme-bg-color;
+}
+
+%btn_shadow {
+    outline: 0;
+    padding-bottom: 10px;
+    border: none;
+    transition: all .3s ease-out;
+    box-shadow: inset 0 -6px 0 0 rgba(0, 0, 0, 0.2);
+    &:active {
+        box-shadow: inset 0 -2px 0 0 rgba(168, 168, 168, 0.2);
+    }
+}
+
+.btn_lc {
+    background-color: $first-color;
+    color: $theme-font-color;
+    @extend %btn_shadow;
+}
+
+.btn_ds {
+    background-color: $secondary-color;
+    color: $theme-font-color;
+    @extend %btn_shadow;
+}
+
+.btn_mc {
+    background-color: $third-color;
+    color: $theme-font-color;
+    @extend %btn_shadow;
+}
+
+.none {
+    display: none;
+}
+
+.logo a img {
+    float: left;
+    width: 190px;
+    height: 60px;
+}
+
 #top_navbar {
     padding-top: 1rem;
     .logo {
@@ -25,6 +96,17 @@ $dark-font:black;
     }
 }
 
+@media (max-width:767px) {
+    #top_navbar {
+        .logo {
+            float: none;
+            a img {
+                float: none;
+            }
+        }
+    }
+}
+
 .table.dashboard_table {
     td,
     th {
@@ -34,6 +116,7 @@ $dark-font:black;
     thead {
         background-color: grey;
         color: $bright-font;
+        font-weight: 700;
     }
 }
 
@@ -44,8 +127,9 @@ $dark-font:black;
         text-align: center;
     }
     thead {
-        background-color: rgb(161, 161, 161);
+        background-color: grey;
         color: $bright-font;
+        font-weight: 700;
     }
 }
 
@@ -70,7 +154,7 @@ input {
 .btn-search {
     width: 100%;
     margin-top: 32px;
-    background-color: $theme-color;
+    background-color: $theme-bg-color;
     color: $bright-font;
 }
 
@@ -82,15 +166,20 @@ input {
     }
     .rows_per_page {
         float: right;
-        width: 30%;
+        width: 15%;
     }
 }
 
 .actions {
     width: 100%;
+    padding: 5px;
     justify-content: center;
-    .btn {
-        margin-right: -3px;
+    a {
+        width: 33.33%;
+        button.btn {
+            width: 100%;
+            margin-right: -3px;
+        }
     }
 }
 
@@ -117,19 +206,22 @@ input {
     h4 {
         padding: 15px;
         margin: -1px -15px 15px -15px;
-        background-color: grey;
+        background-color: $theme-bg-color;
         color: white;
         border-radius: 10px 10px 0 0;
     }
 }
 
-.btn_save {
-    position: relative;
-    height: 100px;
-    .btn {
-        position: absolute;
-        right: 15px;
-        width: 100px;
+.footer_btn_save {
+    padding: 10px 15px;
+    width: 100%;
+    color: $theme-font-color;
+    background-color: $theme-bg-color;
+    margin-bottom: 3rem;
+    transition: all .2s ease-out;
+    &:hover {
+        -webkit-transform: translateY(-5px);
+        transform: translateY(-5px);
     }
 }
 
@@ -137,10 +229,19 @@ input {
     margin-bottom: 40px;
 }
 
+.surgical_procedure_modal {
+    transition: 2s;
+}
+
 #surgical_procedure_modal {
     .modal-dialog {
         max-width: 98%;
     }
+}
+
+.sp_title {
+    margin-bottom: 10px;
+    color: $theme-bg-color;
 }
 
 .fee {
@@ -175,7 +276,7 @@ input {
     #sub_form_modal {
         background-color: rgba(128, 128, 128, 0.89);
         .modal-dialog {
-            max-width: 50%;
+            max-width: 60%;
         }
     }
 }
@@ -194,35 +295,152 @@ ol.order_list {
 .signature_box {
     width: 90%;
     margin: auto;
-    .principal_name_field {
+    .principal_name {
         width: 50%;
-        margin: 30px 5%;
+        margin: 30px 5% 0 5%;
         padding-top: 10px;
-        border-top: 1px solid black;
+        border-bottom: 1px solid black;
         float: left;
         text-align: center;
     }
     .mcr_num {
         width: 30%;
         float: left;
-        margin: 30px 5%;
+        margin: 30px 5% 0 5%;
         padding-top: 10px;
-        border-top: 1px solid black;
+        border-bottom: 1px solid black;
         text-align: center;
+    }
+    .principal_name_field {
+        width: 50%;
+        margin: 0px 5% 30px 5%;
+        padding-top: 10px;
+        float: left;
+        text-align: center;
+        font-size: 14px;
+    }
+    .mcr_field {
+        width: 30%;
+        margin: 0 5% 30px 5%;
+        padding-top: 10px;
+        float: left;
+        text-align: center;
+        font-size: 14px;
     }
 }
 
 .section_title {
     padding: 5px 0 5px 15px;
-    background-color: #e2e2e2;
+    background-color: $theme-bg-color;
+    color: $theme-font-color;
     width: 100%;
 }
 
 .ds_actions {
     width: 100%;
     button {
-        width: 25%;
+        width: 22%;
+        margin-right: 2%;
         border: 1px solid #f8f8f8;
         float: right;
     }
+}
+
+.mc_actions {
+    width: 100%;
+    button {
+        width: 49%;
+        margin-right: 2%;
+        border: 1px solid #f8f8f8;
+        float: right;
+    }
+}
+
+.center {
+    text-align: center;
+}
+
+.bg-theme {
+    background-color: $theme-bg-color;
+}
+
+@import url(http://fonts.googleapis.com/css?family=Lato:100,400);
+.mb20 {
+    margin-bottom: 20px;
+}
+
+#timer .countdown-wrapper {
+    margin: 0 auto;
+}
+
+#timer #countdown {
+    font-family: 'Lato', sans-serif;
+    text-align: right;
+    color: #eee;
+    padding: 22px 0;
+}
+
+#timer #countdown .well b {
+    color: $dark-font;
+}
+
+#timer .countdown-wrapper #countdown .timer {
+    margin: 2px;
+    padding: 5px 15px;
+    font-size: 20px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+#timer .countdown-wrapper #countdown span,
+#timer .countdown-wrapper #countdown span:hover {
+    -webkit-box-shadow: 0 0 0 1px rgba(221, 102, 122, 0.5);
+    -moz-box-shadow: 0 0 0 1px rgba(221, 102, 122, 0.5);
+    box-shadow: 0 0 0 1px rgba(221, 102, 122, 0.5);
+}
+
+#timer .countdown-wrapper .card .card-footer .btn {
+    margin: 2px 0;
+}
+
+.info {
+    width: 100%;
+    font-weight: bold;
+}
+
+.p_info {
+    padding: 10px;
+    font-weight: bold;
+    margin-left: 0;
+    margin-bottom: 10px;
+    border: 3px solid $theme-bg-color;
+    border-radius: 0 30px 30px 0;
+}
+
+.ui-datepicker-header.ui-widget-header.ui-helper-clearfix.ui-corner-all {
+    background: $theme-bg-color;
+}
+
+.ui-datepicker-calendar {
+    background: white;
+}
+
+.ui-state-hover,
+.ui-widget-content .ui-state-hover,
+.ui-state-focus,
+.ui-widget-content .ui-state-focus {
+    background: $theme-font-color;
+    color: $theme-bg-color;
+    border: 1px solid $theme-bg-color;
+}
+
+.ui-state-highlight {
+    border: 1px solid $theme-bg-color !important;
+    color: $theme-bg-color !important;
+    background: #f6f6f6 url(images/ui-bg_glass_100_f6f6f6_1x400.png) 50% 50% repeat-x !important;
+}
+
+.ui-state-active {
+    color: $theme-font-color !important;
+    background: $theme-bg-color !important;
 }
